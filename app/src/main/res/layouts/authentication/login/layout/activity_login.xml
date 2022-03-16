@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Authentication.Login.LoginActivity">
+
+    <TextView
+        android:id="@+id/header1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/header2"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.20"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.110" />
+
+    <TextView
+        android:id="@+id/header2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/header3"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/header1"
+        app:layout_constraintTop_toBottomOf="@+id/header1"
+        app:layout_constraintVertical_bias="0.00" />
+
+    <TextView
+        android:id="@+id/header3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/header5"
+        android:textColor="@color/blue"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/email_edt_xml"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <EditText
+        android:id="@+id/email_edt_xml"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:background="@drawable/etbg"
+        android:drawableStart="@drawable/user"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/segoe_ui_semilight"
+        android:hint="@string/eidphno"
+        android:inputType="text"
+        android:maxEms="24"
+        android:maxLines="1"
+        android:padding="13dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="20dp"
+        android:textColorHint="@color/dgrey"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header3"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:id="@+id/password_edt_xml"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:maxEms="24"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:background="@drawable/etbg"
+        android:fontFamily="@font/segoe_ui_semilight"
+        android:hint="@string/pwd"
+        android:drawableStart="@drawable/lock"
+        android:drawablePadding="10dp"
+        android:padding="13dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColorHint="@color/dgrey"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/email_edt_xml"
+        app:layout_constraintStart_toStartOf="@+id/email_edt_xml"
+        app:layout_constraintTop_toBottomOf="@+id/email_edt_xml"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/send_email_btn_xml_for_login"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:background="@drawable/btnbg"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:stateListAnimator="@null"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/password_edt_xml"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/password_edt_xml"
+        app:layout_constraintTop_toBottomOf="@+id/password_edt_xml"
+        app:layout_constraintVertical_bias="0.06" />
+
+
+    <CheckBox
+        android:id="@+id/founder_tc_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/ckbx"
+        android:buttonTint="@color/turquoise"
+        android:fontFamily="@font/segoe_ui_semibold"
+        android:paddingStart="4dp"
+        android:paddingEnd="3dp"
+        android:paddingBottom="4dp"
+        android:text="@string/rem"
+        android:textColor="@color/dgrey"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/send_email_btn_xml_for_login"
+        app:layout_constraintTop_toBottomOf="@+id/send_email_btn_xml_for_login"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:text="@string/fgt"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/send_email_btn_xml_for_login"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/founder_tc_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/send_email_btn_xml_for_login"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <View
+        android:id="@+id/ld"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/dgrey"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/olw"
+        app:layout_constraintStart_toStartOf="@+id/founder_tc_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/send_email_btn_xml_for_login"
+        app:layout_constraintVertical_bias="0.2255" />
+
+    <TextView
+        android:id="@+id/olw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:text="@string/orl"
+        android:textColor="@color/dgrey"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/forgotPassword"
+        app:layout_constraintStart_toStartOf="@+id/founder_tc_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/send_email_btn_xml_for_login"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <View
+        android:id="@+id/rd"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/dgrey"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/olw"
+        app:layout_constraintEnd_toEndOf="@+id/send_email_btn_xml_for_login"
+        app:layout_constraintTop_toBottomOf="@+id/send_email_btn_xml_for_login"
+        app:layout_constraintVertical_bias="0.2255" />
+
+    <ImageButton
+        android:id="@+id/google_btn_xml"
+        android:layout_width="140dp"
+        android:layout_height="52dp"
+        android:background="@drawable/gbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/founder_tc_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/olw"
+        app:layout_constraintVertical_bias="0.15"
+        />
+
+    <ImageButton
+        android:id="@+id/facebook_btn_xml"
+        android:layout_width="140dp"
+        android:layout_height="52dp"
+        android:background="@drawable/fbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/send_email_btn_xml_for_login"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/google_btn_xml"
+        app:layout_constraintTop_toBottomOf="@+id/olw"
+        app:layout_constraintVertical_bias="0.15"/>
+
+    <TextView
+        android:id="@+id/donthave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/donthave"
+        android:textColor="@color/dgrey"
+        android:textSize="15sp"
+        android:fontFamily="@font/segoe_ui_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/google_btn_xml"
+        app:layout_constraintTop_toBottomOf="@+id/google_btn_xml"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <TextView
+        android:id="@+id/signup_text_for_redirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:text="@string/signup"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/facebook_btn_xml"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/donthave"
+        app:layout_constraintTop_toBottomOf="@+id/facebook_btn_xml"
+        app:layout_constraintVertical_bias="0.23" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

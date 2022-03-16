@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "895420886548",
+    "firebase_url": "https://nivesh-1647325132316-default-rtdb.firebaseio.com",
+    "project_id": "nivesh-1647325132316",
+    "storage_bucket": "nivesh-1647325132316.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895420886548:android:972ed1cb4e36933f380101",
+        "android_client_info": {
+          "package_name": "com.phtlearning.nivesh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895420886548-rimcd6u7gpvoqvkh154ggtajln8be60t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.phtlearning.nivesh",
+            "certificate_hash": "f5cade8d3df7a76963682989ece5b13627a712cf"
+          }
+        },
+        {
+          "client_id": "895420886548-vhdp4kvpi61q2rjma7k3v8fqcrufg4fg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFG4bzye-6BiKfFYz-L4oUKVw94WAazK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895420886548-vhdp4kvpi61q2rjma7k3v8fqcrufg4fg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

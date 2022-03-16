@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Authentication.Option.LoginOption.LoginOption"
+    android:background="@drawable/opbg">
+
+    <TextView
+        android:id="@+id/header1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_ui_black"
+        android:text="@string/header5"
+        android:textColor="@color/blue"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/login_as_founder"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <Button
+        android:id="@+id/login_as_founder"
+        android:layout_width="285dp"
+        android:layout_height="64dp"
+        android:background="@drawable/gradbtn"
+        android:fontFamily="@font/nunito_black"
+        android:stateListAnimator="@null"
+        android:text="@string/lasf"
+        android:textAllCaps="false"
+        android:textColor="@color/mutedblue"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header1"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <Button
+        android:id="@+id/login_as_investor"
+        android:layout_width="285dp"
+        android:layout_height="64dp"
+        android:background="@drawable/gradbtn"
+        android:fontFamily="@font/nunito_black"
+        android:stateListAnimator="@null"
+        android:text="@string/lasi"
+        android:textAllCaps="false"
+        android:textColor="@color/mutedblue"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/login_as_founder"
+        app:layout_constraintTop_toBottomOf="@id/login_as_founder"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/donthave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/donthave"
+        android:textColor="@color/dgrey"
+        android:textSize="15sp"
+        android:fontFamily="@font/segoe_ui_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/login_as_investor"
+        app:layout_constraintTop_toBottomOf="@+id/login_as_investor"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/signup_text_for_redirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:text="@string/signup"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/donthave"
+        app:layout_constraintEnd_toEndOf="@+id/login_as_investor"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/donthave"
+        app:layout_constraintTop_toTopOf="@+id/donthave"
+        app:layout_constraintVertical_bias="0.65" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
