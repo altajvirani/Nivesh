@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setTitle("Loading...");
         progressDialog.setMessage("Please Wait");
 
-        UserEmail = (EditText)findViewById(R.id.email_edt_xml);
+        UserEmail = (EditText)findViewById(R.id.start_date_edt_xml);
         UserPassword = (EditText)findViewById((R.id.password_edt_xml));
         ContinueButton = (Button) findViewById(R.id.send_email_btn_xml_for_login);
         GoogleButton = (ImageButton) findViewById(R.id.google_btn_xml);
@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         ForgotPassword =(TextView) findViewById(R.id.forgotPassword);
 
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-        awesomeValidation.addValidation(this,R.id.email_edt_xml, Patterns.EMAIL_ADDRESS,R.string.Invalid_Email_Message);
+        awesomeValidation.addValidation(this,R.id.start_date_edt_xml, Patterns.EMAIL_ADDRESS,R.string.Invalid_Email_Message);
         awesomeValidation.addValidation(this,R.id.password_edt_xml,PASSWORD_PATTERN,R.string.Invalid_Confirm_Password_Message);
 
         ContinueButton.setOnClickListener(new View.OnClickListener() {
@@ -71,8 +71,8 @@ public class LoginActivity extends AppCompatActivity {
                 if(awesomeValidation.validate())
                 {
                     progressDialog.show();
-                    String UserEmailText = UserEmail.getText().toString();
-                    String UserPasswordText = UserPassword.getText().toString();
+                    String UserEmailText = UserEmail.getText().toString().trim();
+                    String UserPasswordText = UserPassword.getText().toString().trim();
                     Intent intent = new Intent(LoginActivity.this, LoginWithEmailPassword.class);
                     intent.putExtra("EMAIL", UserEmailText);
                     intent.putExtra("PASSWORD", UserPasswordText);

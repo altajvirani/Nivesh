@@ -56,5 +56,24 @@
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">56789</string>
 
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="notification">Notify</string>
+    <string name="likes">Favs</string>
+    <string name="happy">Happy</string>
+    <string name="room">Room</string>
+    <string name="restaurant">Food</string>
+    <string name="shop">Shop</string>
+    <string name="photos">Pics</string>
+    <string name="call">Call</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invalid_input">This Field Can\'t be Empty</string>
+    <string name="person_name">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="add">Raise</string>
+    <string name="logout">Logout</string>
+    <string name="investd">Invested</string>
+
 
 </resources>

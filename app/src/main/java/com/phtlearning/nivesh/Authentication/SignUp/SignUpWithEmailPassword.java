@@ -16,10 +16,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.phtlearning.nivesh.Authentication.Login.LoginActivity;
 import com.phtlearning.nivesh.Authentication.Option.SignUpOption.SignupOption;
+import com.phtlearning.nivesh.Authentication.SignUp.DataBaseHelper.UserSignUpDetailsHelper;
+import com.phtlearning.nivesh.Authentication.SignUp.DataBaseHelper.UserTypeHelper;
 
 
 public class SignUpWithEmailPassword extends AppCompatActivity {
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference, UserTypeReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class SignUpWithEmailPassword extends AppCompatActivity {
 
         progressDialog.show();
         databaseReference = FirebaseDatabase.getInstance().getReference().child(UserType);
+        UserTypeReference = FirebaseDatabase.getInstance().getReference().child("UserType");
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseAuth.createUserWithEmailAndPassword(UserEmail, UserPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -42,8 +45,10 @@ public class SignUpWithEmailPassword extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     String CurrentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                    UserSignUpDetails data = new UserSignUpDetails(UserEmail);
-                    databaseReference.child(CurrentUser).setValue(data);
+                    UserSignUpDetailsHelper userSignUpDetailsHelper = new UserSignUpDetailsHelper(UserEmail);
+                    databaseReference.child(CurrentUser).setValue(userSignUpDetailsHelper);
+                    UserTypeHelper userTypeHelper = new UserTypeHelper(UserType);
+                    UserTypeReference.child(CurrentUser).setValue(userTypeHelper);
                     Intent intent = new Intent(SignUpWithEmailPassword.this, LoginActivity.class);
                     intent.putExtra("UserType",UserType);
                     startActivity(intent);

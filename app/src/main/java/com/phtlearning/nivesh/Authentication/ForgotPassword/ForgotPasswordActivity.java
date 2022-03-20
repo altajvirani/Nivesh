@@ -19,10 +19,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.phtlearning.nivesh.Authentication.Login.LoginActivity;
-import com.phtlearning.nivesh.Authentication.Login.LoginWithEmailPassword;
 import com.phtlearning.nivesh.Authentication.Option.LoginOption.LoginOption;
 import com.phtlearning.nivesh.Authentication.Option.SignUpOption.SignupOption;
-import com.phtlearning.nivesh.Authentication.SignUp.SignUpActivity;
 import com.phtlearning.nivesh.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
@@ -39,7 +37,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String UserType = intent.getStringExtra("UserType");
 
-        UserEmail =(EditText)findViewById(R.id.email_edt_xml);
+        UserEmail =(EditText)findViewById(R.id.start_date_edt_xml);
         SendEmailButton =(Button)findViewById(R.id.send_email_btn_xml_for_login);
         RedirectToSignUpPage =(TextView) findViewById(R.id.signup_text_for_redirect);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -50,7 +48,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
 
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-        awesomeValidation.addValidation(this,R.id.email_edt_xml, Patterns.EMAIL_ADDRESS,R.string.Invalid_Email_Message);
+        awesomeValidation.addValidation(this,R.id.start_date_edt_xml, Patterns.EMAIL_ADDRESS,R.string.Invalid_Email_Message);
 
         SendEmailButton.setOnClickListener(new View.OnClickListener() {
             @Override

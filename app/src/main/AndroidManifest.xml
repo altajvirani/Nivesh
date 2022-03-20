@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nivesh">
-
+        <activity
+            android:name=".Home.InvestorHomeActivity"
+            android:exported="false" />
         <activity
             android:name=".Authentication.ForgotPassword.ForgotPasswordActivity"
             android:exported="false" />
@@ -50,12 +52,6 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
-            android:name=".Home.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Authentication.EmailConformation.EmailConformation"
-            android:exported="false" />
-        <activity
             android:name=".Authentication.SignUp.SignUpWithEmailPassword"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
@@ -66,19 +62,13 @@
             android:name=".Authentication.Option.LoginOption.LoginOption"
             android:exported="false" />
         <activity
-            android:name=".Authentication.Investor.SignUp.InvestorSignUp"
-            android:exported="false" />
-        <activity
-            android:name=".Authentication.Investor.Login.InvestorLogin"
+            android:name=".Home.FounderHomeActivity"
             android:exported="false" />
         <activity
             android:name=".Authentication.Login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Authentication.Founder.SignUp.FounderSignUp"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

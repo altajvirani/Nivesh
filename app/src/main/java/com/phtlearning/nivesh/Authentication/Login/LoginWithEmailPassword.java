@@ -18,7 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.phtlearning.nivesh.Authentication.Option.LoginOption.LoginOption;
-import com.phtlearning.nivesh.Home.HomeActivity;
+import com.phtlearning.nivesh.Home.FounderHomeActivity;
+import com.phtlearning.nivesh.Home.InvestorHomeActivity;
 
 
 public class LoginWithEmailPassword extends AppCompatActivity {
@@ -41,7 +42,7 @@ public class LoginWithEmailPassword extends AppCompatActivity {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.getChildrenCount()==1)
+                if(snapshot.getChildrenCount()>0)
                 {
                     firebaseAuth.signInWithEmailAndPassword(UserEmail, UserPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -50,12 +51,25 @@ public class LoginWithEmailPassword extends AppCompatActivity {
                             {
                                 if(firebaseAuth.getCurrentUser().isEmailVerified())
                                 {
-                                    Intent intent = new Intent(LoginWithEmailPassword.this, HomeActivity.class);
-                                    startActivity(intent);
-                                    intent.putExtra("UserType", UserType);
-                                    finishAffinity();
-                                    finish();
-                                    progressDialog.hide();
+                                    if(UserType.equals("Founder"))
+                                    {
+                                        Intent intent = new Intent(LoginWithEmailPassword.this, FounderHomeActivity.class);
+                                        startActivity(intent);
+                                        intent.putExtra("UserType", UserType);
+                                        finishAffinity();
+                                        finish();
+                                        progressDialog.hide();
+                                    }
+                                    else if(UserType.equals("Investor"))
+                                    {
+                                        Intent intent = new Intent(LoginWithEmailPassword.this, InvestorHomeActivity.class);
+                                        startActivity(intent);
+                                        intent.putExtra("UserType", UserType);
+                                        finishAffinity();
+                                        finish();
+                                        progressDialog.hide();
+                                    }
+
                                     Toast.makeText(LoginWithEmailPassword.this, "Login as "+UserType, Toast.LENGTH_SHORT).show();
 
                                 }

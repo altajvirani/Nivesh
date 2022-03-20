@@ -46,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         // getting refrence from activity_founder_sign_up.xml file
-        UserEmail = (EditText)findViewById(R.id.email_edt_xml);
+        UserEmail = (EditText)findViewById(R.id.start_date_edt_xml);
         UserPassword = (EditText)findViewById((R.id.password_edt_xml));
         UserRePassword = (EditText)findViewById(R.id.re_password_edt_xml);
         ContinueButton = (Button) findViewById(R.id.continue_btn_xml);
@@ -64,7 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         // Checking for valid inputs from users(Founders)
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-        awesomeValidation.addValidation(this,R.id.email_edt_xml, Patterns.EMAIL_ADDRESS,R.string.Invalid_Email_Message);
+        awesomeValidation.addValidation(this,R.id.start_date_edt_xml, Patterns.EMAIL_ADDRESS,R.string.Invalid_Email_Message);
         awesomeValidation.addValidation(this,R.id.password_edt_xml,PASSWORD_PATTERN,R.string.Invalid_Password_Message);
         awesomeValidation.addValidation(this,R.id.re_password_edt_xml,R.id.password_edt_xml,R.string.Invalid_Confirm_Password_Message);
 
