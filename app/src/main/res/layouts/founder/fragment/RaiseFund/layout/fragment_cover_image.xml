@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Cover Image of Comapany"
+        android:text="Cover Image of Company"
         android:textColor="@color/blue"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

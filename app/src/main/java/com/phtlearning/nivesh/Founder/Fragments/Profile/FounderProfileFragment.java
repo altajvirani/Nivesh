@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.phtlearning.nivesh.R;
 
@@ -16,7 +17,7 @@ import com.phtlearning.nivesh.R;
  * create an instance of this fragment.
  */
 public class FounderProfileFragment extends Fragment {
-
+    Button CompleteProfileBtn;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,6 +62,17 @@ public class FounderProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_founder_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_founder_profile, container, false);
+        CompleteProfileBtn = (Button) view.findViewById(R.id.complete_founder_profile_btn);
+
+        CompleteProfileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserNameInFounder obj = new UserNameInFounder();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container_view_tag,  obj).commit();
+            }
+        });
+
+        return view;
     }
 }
