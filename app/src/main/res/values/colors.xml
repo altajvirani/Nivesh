@@ -55,4 +55,13 @@
     <color name="goodgrey">#535353</color>
     <color name="lightgrey">#EEEEEE</color>
 
+    <color name="mgrey">#878787</color>
+    <color name="borange">#E36161</color>
+    <color name="neongrenishblue">#00DDFF</color>
+    <color name="mutedgreenishblue">#1178BB</color>
+    <color name="cardcolor">#FDFDFF</color>
+    <color name="gradblue">#0F2CE2</color>
+    <color name="gradneon">#23FAD7</color>
+    <color name="vdgrey">#43444A</color>
+
 </resources>

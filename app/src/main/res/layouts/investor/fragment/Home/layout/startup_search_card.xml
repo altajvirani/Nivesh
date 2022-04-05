@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/startupcard"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="29dp"
+        android:backgroundTint="@color/cardcolor"
+        android:outlineSpotShadowColor="@color/dgrey"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="26dp"
+        app:cardElevation="16dp"
+        tools:ignore="UnusedAttribute">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:paddingBottom="7dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/simg2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cardbg2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:shapeAppearanceOverlay="@style/roundBorder"
+                    tools:ignore="ContentDescription" />
+
+                <ImageButton
+                    android:id="@+id/dot_menu_btn"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="6.5dp"
+                    android:background="@drawable/menu_btn"
+                    android:contentDescription="@string/dot_menu"
+                    android:elevation="8dp"
+                    android:outlineSpotShadowColor="@color/dgrey"
+                    android:padding="11dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/dotmenu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <!--                <ImageView-->
+                <!--                    android:layout_width="145dp"-->
+                <!--                    android:layout_height="38dp"-->
+                <!--                    android:adjustViewBounds="true"-->
+                <!--                    android:visibility="invisible"-->
+                <!--                    android:background="@drawable/dealclosed"-->
+                <!--                    android:layout_marginTop="6dp"-->
+                <!--                    android:id="@+id/dealclosedbtn"-->
+                <!--                    android:layout_marginStart="6.5dp"-->
+                <!--                    app:layout_constraintHorizontal_bias="0"-->
+                <!--                    app:layout_constraintVertical_bias="0"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/sname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/sname2"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/sdesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/nunito_medium"
+                android:lineSpacingMultiplier="0.85"
+                android:maxLines="4"
+                android:text="@string/ssubtitle2"
+                android:textColor="@color/dgrey"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="9dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/s2tag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/tagbg"
+                    android:fontFamily="@font/nunito_regular"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/s2tag1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/lavenderblue"
+                    android:textSize="14sp"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/s2tag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/tagbg"
+                    android:fontFamily="@font/nunito_regular"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/s2tag2"
+                    android:textAllCaps="false"
+                    android:textColor="@color/lavenderblue"
+                    android:textSize="14sp"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/raisingprogbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="3dp"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/progbg"
+                tools:progress="39" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/noin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="@string/noofinv"
+                    android:textColor="@color/black"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:id="@+id/inv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_medium"
+                    android:text="@string/investors"
+                    android:textColor="@color/dgrey"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:id="@+id/perraised"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="@string/s2prog"
+                    android:textColor="@color/black"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:id="@+id/persym"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="@string/percent_sym"
+                    android:textColor="@color/black"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:id="@+id/raised"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_medium"
+                    android:text="@string/raised"
+                    android:textColor="@color/dgrey"
+                    android:textSize="12.5sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/days"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="@string/noofdaysleft"
+                    android:textColor="@color/orange"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:id="@+id/rssym"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_black"
+                    android:paddingEnd="1dp"
+                    android:text="@string/rupeesymbol"
+                    android:textColor="@color/lightmutedblue"
+                    android:textSize="26sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/minam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="@string/amount"
+                    android:textColor="@color/lightmutedblue"
+                    android:textSize="26sp"
+                    tools:ignore="TextContrastCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tleft"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_medium"
+                    android:text="@string/timeleft"
+                    android:textColor="@color/dgrey"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:id="@+id/minamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_medium"
+                    android:text="@string/minamount"
+                    android:textColor="@color/dgrey"
+                    android:textSize="12.5sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

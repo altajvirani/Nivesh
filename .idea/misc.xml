@@ -6,12 +6,14 @@
         <entry key="..\:/Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1135" />
         <entry key="..\:/Project/app/src/main/res/drawable/btnbg.xml" value="0.14" />
         <entry key="..\:/Project/app/src/main/res/drawable/call_background_stroke.xml" value="0.2595" />
+        <entry key="..\:/Project/app/src/main/res/drawable/catbg.xml" value="0.1" />
         <entry key="..\:/Project/app/src/main/res/drawable/circleyellowfil.xml" value="0.1255" />
         <entry key="..\:/Project/app/src/main/res/drawable/circular_grey_bordersolid.xml" value="0.1255" />
         <entry key="..\:/Project/app/src/main/res/drawable/circularbordersolid.xml" value="0.1255" />
         <entry key="..\:/Project/app/src/main/res/drawable/ckbx.xml" value="0.1" />
         <entry key="..\:/Project/app/src/main/res/drawable/default_background_oval.xml" value="0.14" />
         <entry key="..\:/Project/app/src/main/res/drawable/default_background_rounded_rect.xml" value="0.14" />
+        <entry key="..\:/Project/app/src/main/res/drawable/dragdownsymbol.xml" value="0.137" />
         <entry key="..\:/Project/app/src/main/res/drawable/etbg.xml" value="0.14" />
         <entry key="..\:/Project/app/src/main/res/drawable/gradbtn.xml" value="0.14" />
         <entry key="..\:/Project/app/src/main/res/drawable/home_background_oval.xml" value="0.14" />
@@ -125,6 +127,8 @@
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Home/layout/activity_investor_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_home.xml" value="0.1296875" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_investor_home.xml" value="0.20380434782608695" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Home/layout/startup_search_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Home/layout/startupsearch_bottomsheet.xml" value="0.1296875" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_add.xml" value="0.122" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_dob.xml" value="0.132" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_logout.xml" value="0.122" />
