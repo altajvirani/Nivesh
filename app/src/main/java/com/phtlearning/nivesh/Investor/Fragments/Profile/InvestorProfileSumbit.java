@@ -1,4 +1,4 @@
-package com.phtlearning.nivesh.Founder.Fragments.Profile;
+package com.phtlearning.nivesh.Investor.Fragments.Profile;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -28,15 +28,14 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.phtlearning.nivesh.Founder.DatabaseHelper.ProfileHelper;
-import com.phtlearning.nivesh.Founder.DatabaseHelper.RaiseFundHelper;
 import com.phtlearning.nivesh.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ProfileSumbit#newInstance} factory method to
+ * Use the {@link InvestorProfileSumbit#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProfileSumbit extends Fragment {
+public class InvestorProfileSumbit extends Fragment {
     Button SubmitButton;
     DatabaseReference founderReference, userTypeReference;
     StorageReference storageReference;
@@ -49,7 +48,7 @@ public class ProfileSumbit extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ProfileSumbit() {
+    public InvestorProfileSumbit() {
         // Required empty public constructor
     }
 
@@ -59,11 +58,11 @@ public class ProfileSumbit extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileSumbit.
+     * @return A new instance of fragment InvestorProfileSumbit.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProfileSumbit newInstance(String param1, String param2) {
-        ProfileSumbit fragment = new ProfileSumbit();
+    public static InvestorProfileSumbit newInstance(String param1, String param2) {
+        InvestorProfileSumbit fragment = new InvestorProfileSumbit();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -84,12 +83,13 @@ public class ProfileSumbit extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile_sumbit, container, false);
+        View view = inflater.inflate(R.layout.fragment_investor_profile_sumbit, container, false);
+
         ProgressDialog progressDialog =  new ProgressDialog(getContext());
         progressDialog.setTitle("Loading...");
         progressDialog.setMessage("Please Wait");
 
-        SubmitButton = (Button)view.findViewById(R.id.profile_submit);
+        SubmitButton = (Button)view.findViewById(R.id.investor_profile_submit);
 
         String UserName = getArguments().getString("UserName");
         String UserProfession = getArguments().getString("UserProfession");
@@ -102,7 +102,7 @@ public class ProfileSumbit extends Fragment {
         Uri ProfileImageUri = Uri.parse(ProfileImage);
 
         userTypeReference = FirebaseDatabase.getInstance().getReference("UserType");
-        founderReference = FirebaseDatabase.getInstance().getReference().child("Founder");
+        founderReference = FirebaseDatabase.getInstance().getReference().child("Investor");
         storageReference = FirebaseStorage.getInstance().getReference();
 
         SubmitButton.setOnClickListener(new View.OnClickListener() {
@@ -124,7 +124,7 @@ public class ProfileSumbit extends Fragment {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         String UserType = snapshot.child(CurrentUserUid).child("userType").getValue().toString();
-                                        if(UserType.equals("Founder"))
+                                        if(UserType.equals("Investor"))
                                         {
                                             ProfileHelper profileHelper = new ProfileHelper(UserName,UserProfession,UserDOB,UserGender,uri.toString(),AboutMe,"+91 "+ContactNumber);
 
@@ -167,7 +167,6 @@ public class ProfileSumbit extends Fragment {
 
         return view;
     }
-
     private String getFileExtension(Uri companyLogoUri) {
         ContentResolver contentResolver = getContext().getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();

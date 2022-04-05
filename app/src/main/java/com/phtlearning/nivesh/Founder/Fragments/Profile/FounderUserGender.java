@@ -4,24 +4,25 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.phtlearning.nivesh.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AboutMe#newInstance} factory method to
+ * Use the {@link FounderUserGender#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AboutMe extends Fragment {
-    Button UserNameNxtBtn;
-    EditText UserNameEditText;
+public class FounderUserGender extends Fragment {
+    private RadioGroup radioGroup;
+    private RadioButton selectedRadioButton;
+    private Button btnDisplay;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,7 +33,7 @@ public class AboutMe extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AboutMe() {
+    public FounderUserGender() {
         // Required empty public constructor
     }
 
@@ -42,11 +43,11 @@ public class AboutMe extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AboutCompany.
+     * @return A new instance of fragment UserGender.
      */
     // TODO: Rename and change types and number of parameters
-    public static AboutMe newInstance(String param1, String param2) {
-        AboutMe fragment = new AboutMe();
+    public static FounderUserGender newInstance(String param1, String param2) {
+        FounderUserGender fragment = new FounderUserGender();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,43 +68,42 @@ public class AboutMe extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_about_me, container, false);
+        View view = inflater.inflate(R.layout.fragment_founder_user_gender, container, false);
 
         String UserName = getArguments().getString("UserName");
         String UserProfession = getArguments().getString("UserProfession");
         String UserDOB = getArguments().getString("UserDOB");
-        String UserGender = getArguments().getString("UserGender");
-        String ProfileImage = getArguments().getString("ProfileImage");
 
-        UserNameNxtBtn = view.findViewById(R.id.user_profile_about_me_nxt_btn);
-        UserNameEditText = view.findViewById(R.id.about_me_edit_txt);
-
-        UserNameNxtBtn.setOnClickListener(new View.OnClickListener() {
+        radioGroup = (RadioGroup) view.findViewById(R.id.gender_radio_founder);
+        btnDisplay = (Button) view.findViewById(R.id.gender_founder_next_btn);
+        btnDisplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String AboutMe = UserNameEditText.getText().toString().trim();
-                if(TextUtils.isEmpty(AboutMe))
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                selectedRadioButton = (RadioButton) getView().findViewById(selectedId);
+                if(selectedId == -1)
                 {
-                    Toast.makeText(getContext(), "This Field be Can't Empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Please Select Your Gender!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    UserContactNumber obj = new UserContactNumber();
+
+                    String UserGender = selectedRadioButton.getText().toString();
+                    FounderUserProfileImage obj = new FounderUserProfileImage();
                     Bundle args = new Bundle();
                     args.putString("UserName", UserName);
                     args.putString("UserProfession", UserProfession);
                     args.putString("UserDOB", UserDOB);
                     args.putString("UserGender", UserGender);
-                    args.putString("ProfileImage", ProfileImage);
-                    args.putString("AboutMe", AboutMe);
+
                     obj.setArguments(args);
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container_view_tag, obj).commit();
                 }
+
+
+
             }
-
         });
-
-
-        return view;
+        return  view;
     }
 }

@@ -3,7 +3,7 @@ package com.phtlearning.nivesh.Founder.DatabaseHelper;
 public class RaiseFundHelper {
     String CompanyName, FounderName, CompanyLogo, CompanyDiscription, CompanyCategory, StartDate, EndDate, MinInvestment,
             TotalTargetAmount, TotalInvestors, ProblemStatement, SolutionStatement, PitchLink, TotalRevenue,
-            TotalEmp, WebSiteLink;
+            TotalEmp, WebSiteLink, CompanyForm;
 
     public RaiseFundHelper() {
     }
@@ -32,6 +32,33 @@ public class RaiseFundHelper {
         WebSiteLink = webSiteLink;
     }
 
+    public RaiseFundHelper(String companyName, String founderName, String companyLogo, String companyDiscription, String companyCategory, String startDate, String endDate, String minInvestment, String totalTargetAmount, String totalInvestors, String problemStatement, String solutionStatement, String pitchLink, String totalRevenue, String totalEmp, String webSiteLink, String companyForm) {
+        CompanyName = companyName;
+        FounderName = founderName;
+        CompanyLogo = companyLogo;
+        CompanyDiscription = companyDiscription;
+        CompanyCategory = companyCategory;
+        StartDate = startDate;
+        EndDate = endDate;
+        MinInvestment = minInvestment;
+        TotalTargetAmount = totalTargetAmount;
+        TotalInvestors = totalInvestors;
+        ProblemStatement = problemStatement;
+        SolutionStatement = solutionStatement;
+        PitchLink = pitchLink;
+        TotalRevenue = totalRevenue;
+        TotalEmp = totalEmp;
+        WebSiteLink = webSiteLink;
+        CompanyForm = companyForm;
+    }
+
+    public String getCompanyForm() {
+        return CompanyForm;
+    }
+
+    public void setCompanyForm(String companyForm) {
+        CompanyForm = companyForm;
+    }
 
     public String getCompanyName() {
         return CompanyName;

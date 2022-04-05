@@ -1,4 +1,4 @@
-package com.phtlearning.nivesh.Founder.Fragments.Profile;
+package com.phtlearning.nivesh.Investor.Fragments.Profile;
 
 import android.os.Bundle;
 
@@ -12,16 +12,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.phtlearning.nivesh.Founder.Fragments.RaiseFund.CoverImageFragment;
+import com.phtlearning.nivesh.Founder.Fragments.Profile.FounderUserProfession;
 import com.phtlearning.nivesh.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link UserNameInFounder#newInstance} factory method to
+ * Use the {@link InvestorName#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UserNameInFounder extends Fragment {
-
+public class InvestorName extends Fragment {
     Button UserNameNxtBtn;
     EditText UserNameEditText;
     // TODO: Rename parameter arguments, choose names that match
@@ -33,7 +32,7 @@ public class UserNameInFounder extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public UserNameInFounder() {
+    public InvestorName() {
         // Required empty public constructor
     }
 
@@ -43,11 +42,11 @@ public class UserNameInFounder extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment UserNameInFounder.
+     * @return A new instance of fragment InvestorName.
      */
     // TODO: Rename and change types and number of parameters
-    public static UserNameInFounder newInstance(String param1, String param2) {
-        UserNameInFounder fragment = new UserNameInFounder();
+    public static InvestorName newInstance(String param1, String param2) {
+        InvestorName fragment = new InvestorName();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,10 +67,9 @@ public class UserNameInFounder extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_user_name_in_founder, container, false);
-        UserNameNxtBtn = (Button) view.findViewById(R.id.user_name_founder_btn_txt);
-        UserNameEditText = (EditText) view.findViewById(R.id.user_name_founder_edt_txt);
-
+        View view = inflater.inflate(R.layout.fragment_investor_name, container, false);
+        UserNameNxtBtn = (Button) view.findViewById(R.id.investor_name_btn_txt);
+        UserNameEditText = (EditText) view.findViewById(R.id.investor_name_edt_txt);
         UserNameNxtBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,16 +80,15 @@ public class UserNameInFounder extends Fragment {
                 }
                 else
                 {
-                    UserProfession obj = new UserProfession();
+                    InvestorProfession obj = new InvestorProfession();
                     Bundle args = new Bundle();
                     args.putString("UserName", UserName);
                     obj.setArguments(args);
-                    getFragmentManager().beginTransaction().replace(R.id.fragment_container_view_tag, obj).commit();
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_investor_container_view_tag, obj).commit();
                 }
 
             }
         });
-
         return view;
     }
 }

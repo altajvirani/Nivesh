@@ -1,4 +1,4 @@
-package com.phtlearning.nivesh.Founder.Fragments.RaiseFund;
+package com.phtlearning.nivesh.Founder.Fragments.Profile;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -27,19 +27,17 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.phtlearning.nivesh.Founder.DatabaseHelper.RaiseFundHelper;
-import com.phtlearning.nivesh.Founder.Fragments.Search.FounderSearchFragment;
+import com.phtlearning.nivesh.Founder.DatabaseHelper.ProfileHelper;
 import com.phtlearning.nivesh.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SubmitFragment#newInstance} factory method to
+ * Use the {@link FounderProfileSumbit#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SubmitFragment extends Fragment {
-
+public class FounderProfileSumbit extends Fragment {
     Button SubmitButton;
-    DatabaseReference startupReference, categoryReference, founderReference, userTypeReference;
+    DatabaseReference founderReference, userTypeReference;
     StorageReference storageReference;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,7 +48,7 @@ public class SubmitFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SubmitFragment() {
+    public FounderProfileSumbit() {
         // Required empty public constructor
     }
 
@@ -60,11 +58,11 @@ public class SubmitFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SubmitFragment.
+     * @return A new instance of fragment ProfileSumbit.
      */
     // TODO: Rename and change types and number of parameters
-    public static SubmitFragment newInstance(String param1, String param2) {
-        SubmitFragment fragment = new SubmitFragment();
+    public static FounderProfileSumbit newInstance(String param1, String param2) {
+        FounderProfileSumbit fragment = new FounderProfileSumbit();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -85,48 +83,35 @@ public class SubmitFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_submit, container, false);
+        View view = inflater.inflate(R.layout.fragment_founder_profile_sumbit, container, false);
         ProgressDialog progressDialog =  new ProgressDialog(getContext());
         progressDialog.setTitle("Loading...");
         progressDialog.setMessage("Please Wait");
 
-        SubmitButton = (Button)view.findViewById(R.id.submit_button);
+        SubmitButton = (Button)view.findViewById(R.id.profile_submit);
 
-        String CompanyName = getArguments().getString("CompanyName");
-        String FounderName = getArguments().getString("FounderName");
-        String CoverImage = getArguments().getString("CoverImage");
-        String CompanyDiscription = getArguments().getString("CompanyDiscription");
-        String CompanyCategory = getArguments().getString("CompanyCategory");
-        String StartDate = getArguments().getString("StartDate");
-        String EndDate = getArguments().getString("EndDate");
-        String MinInvestment = getArguments().getString("MinInvestment");
-        String TotalTargetAmount = getArguments().getString("TotalTargetAmount");
-        String TotalInvestors = getArguments().getString("TotalInvestors");
-        String ProblemStatement = getArguments().getString("ProblemStatement");
-        String SolutionStatement = getArguments().getString("SolutionStatement");
-        String PitchLink = getArguments().getString("PitchLink");
-        String TotalRevenue = getArguments().getString("TotalRevenue");
-        String TotalEmp = getArguments().getString("TotalEmp");
-        String WebSiteLink = getArguments().getString("WebSiteLink");
-        String CompanyForm = getArguments().getString("CompanyForm");
+        String UserName = getArguments().getString("UserName");
+        String UserProfession = getArguments().getString("UserProfession");
+        String UserDOB = getArguments().getString("UserDOB");
+        String UserGender = getArguments().getString("UserGender");
+        String ProfileImage = getArguments().getString("ProfileImage");
+        String AboutMe = getArguments().getString("AboutMe");
+        String ContactNumber = getArguments().getString("ContactNumber");
 
-        Uri CoverImageUri = Uri.parse(CoverImage);
+        Uri ProfileImageUri = Uri.parse(ProfileImage);
 
-        startupReference = FirebaseDatabase.getInstance().getReference().child("Startups");
-        categoryReference = FirebaseDatabase.getInstance().getReference().child("Category_wise");
-        founderReference = FirebaseDatabase.getInstance().getReference().child("Founder");
         userTypeReference = FirebaseDatabase.getInstance().getReference("UserType");
+        founderReference = FirebaseDatabase.getInstance().getReference().child("Founder");
         storageReference = FirebaseStorage.getInstance().getReference();
-
 
         SubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressDialog.show();
 
-                StorageReference fileref = storageReference.child(System.currentTimeMillis() + "." +getFileExtension(CoverImageUri));
+                StorageReference fileref = storageReference.child(System.currentTimeMillis() + "." +getFileExtension(ProfileImageUri));
 
-                fileref.putFile(CoverImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                fileref.putFile(ProfileImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         fileref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -140,17 +125,9 @@ public class SubmitFragment extends Fragment {
                                         String UserType = snapshot.child(CurrentUserUid).child("userType").getValue().toString();
                                         if(UserType.equals("Founder"))
                                         {
-                                            RaiseFundHelper raiseFundHelper = new RaiseFundHelper(CompanyName,FounderName,uri.toString(),CompanyDiscription,CompanyCategory
-                                                    ,StartDate,EndDate,MinInvestment,TotalTargetAmount,TotalInvestors,ProblemStatement,SolutionStatement,PitchLink,
-                                                    TotalRevenue,TotalEmp,WebSiteLink,CompanyForm);
-                                            RaiseFundHelper startupHelper = new RaiseFundHelper(CompanyName);
+                                            ProfileHelper profileHelper = new ProfileHelper(UserName,UserProfession,UserDOB,UserGender,uri.toString(),AboutMe,"+91 "+ContactNumber);
 
-                                            startupReference.push().setValue(startupHelper);
-                                            categoryReference.child(CompanyCategory).child(CompanyName).setValue(raiseFundHelper);
-
-                                            founderReference.child(CurrentUserUid).child("Startups").push().setValue(raiseFundHelper);
-                                            Toast.makeText(getContext(), "Successfully!", Toast.LENGTH_SHORT).show();
-
+                                            founderReference.child(CurrentUserUid).child("Profile").setValue(profileHelper);
 
                                             progressDialog.hide();
                                         }
@@ -196,6 +173,4 @@ public class SubmitFragment extends Fragment {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(companyLogoUri));
 
     }
-
-
 }

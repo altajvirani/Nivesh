@@ -103,7 +103,7 @@ public class WebSiteFragment extends Fragment {
                 }
                 else
                 {
-                    SubmitFragment obj = new SubmitFragment();
+                    CompanyForm obj = new CompanyForm();
                     Bundle args = new Bundle();
                     args.putString("CompanyName", CompanyName);
                     args.putString("FounderName", FounderName);

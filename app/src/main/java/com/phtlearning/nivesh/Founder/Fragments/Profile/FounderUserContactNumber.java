@@ -16,19 +16,17 @@ import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.phtlearning.nivesh.Founder.Fragments.RaiseFund.NoOfEmpFragment;
 import com.phtlearning.nivesh.R;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link UserContactNumber#newInstance} factory method to
+ * Use the {@link FounderUserContactNumber#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UserContactNumber extends Fragment {
+public class FounderUserContactNumber extends Fragment {
     EditText ContactEditText;
     Button ContactNxtBtn;
     // TODO: Rename parameter arguments, choose names that match
@@ -40,7 +38,7 @@ public class UserContactNumber extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public UserContactNumber() {
+    public FounderUserContactNumber() {
         // Required empty public constructor
     }
 
@@ -53,8 +51,8 @@ public class UserContactNumber extends Fragment {
      * @return A new instance of fragment UserContactNumber.
      */
     // TODO: Rename and change types and number of parameters
-    public static UserContactNumber newInstance(String param1, String param2) {
-        UserContactNumber fragment = new UserContactNumber();
+    public static FounderUserContactNumber newInstance(String param1, String param2) {
+        FounderUserContactNumber fragment = new FounderUserContactNumber();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -75,7 +73,7 @@ public class UserContactNumber extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_user_contact_number, container, false);
+        View view = inflater.inflate(R.layout.fragment_founder_user_contact_number, container, false);
         String UserName = getArguments().getString("UserName");
         String UserProfession = getArguments().getString("UserProfession");
         String UserDOB = getArguments().getString("UserDOB");
@@ -122,7 +120,7 @@ public class UserContactNumber extends Fragment {
                                     public void onCodeSent(@NonNull String otp, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                         super.onCodeSent(otp, forceResendingToken);
                                         progressDialog.hide();
-                                        OTPVerification obj = new OTPVerification();
+                                        FounderOTPVerification obj = new FounderOTPVerification();
                                         Bundle args = new Bundle();
                                         args.putString("UserName", UserName);
                                         args.putString("UserProfession", UserProfession);

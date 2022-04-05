@@ -1,5 +1,7 @@
-package com.phtlearning.nivesh.Founder.Fragments.Profile;
+package com.phtlearning.nivesh.Investor.Fragments.Profile;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,23 +20,20 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.phtlearning.nivesh.Founder.DatabaseHelper.ProfileHelper;
+import com.phtlearning.nivesh.Authentication.Option.LoginOption.LoginOption;
 import com.phtlearning.nivesh.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link UserProfileView#newInstance} factory method to
+ * Use the {@link InvestorProfileView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UserProfileView extends Fragment {
+public class InvestorProfileView extends Fragment {
     DatabaseReference founderReference, userTypeReference;
-    LinearLayout personalinfo, experience, review;
-    TextView personalinfobtn, experiencebtn, reviewbtn, UserNameTxtView, UserProfessionTxtView,UserDOBTxtView, UserEmailTxtView, UserContactNumberTxtView, UserGenderTxtView,UserAboutMeTxtView;
+    TextView LogoutText, UserNameTxtView, UserProfessionTxtView,UserDOBTxtView, UserEmailTxtView, UserContactNumberTxtView, UserGenderTxtView,UserAboutMeTxtView;
     ImageView UserProfileImageTxtView;
     String UserName, UserProfession, UserDOB, UserEmail,UserAboutMe, UserContactNumber, UserProfileImage, UserGender;
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -45,7 +43,7 @@ public class UserProfileView extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public UserProfileView() {
+    public InvestorProfileView() {
         // Required empty public constructor
     }
 
@@ -55,11 +53,11 @@ public class UserProfileView extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment UserProfileView.
+     * @return A new instance of fragment InvestorProfileView.
      */
     // TODO: Rename and change types and number of parameters
-    public static UserProfileView newInstance(String param1, String param2) {
-        UserProfileView fragment = new UserProfileView();
+    public static InvestorProfileView newInstance(String param1, String param2) {
+        InvestorProfileView fragment = new InvestorProfileView();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -80,14 +78,8 @@ public class UserProfileView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_user_profile_view, container, false);
-        personalinfo = view.findViewById(R.id.personalinfo);
-        experience = view.findViewById(R.id.experience);
-        review = view.findViewById(R.id.review);
-        personalinfobtn = view.findViewById(R.id.personalinfobtn);
-        experiencebtn = view.findViewById(R.id.experiencebtn);
-        reviewbtn = view.findViewById(R.id.reviewbtn);
-
+        View view = inflater.inflate(R.layout.fragment_investor_profile_view, container, false);
+        LogoutText = view.findViewById(R.id.logout_text);
         UserNameTxtView = view.findViewById(R.id.user_name_profile_view);
         UserProfessionTxtView = view.findViewById(R.id.user_profession_view);
         UserDOBTxtView = view.findViewById(R.id.user_dob);
@@ -95,55 +87,11 @@ public class UserProfileView extends Fragment {
         UserAboutMeTxtView = view.findViewById(R.id.user_about_me);
         UserContactNumberTxtView = view.findViewById(R.id.user_contact_number);
         UserProfileImageTxtView = view.findViewById(R.id.user_image_view);
-        UserGenderTxtView = view.findViewById(R.id.user_gender); ;
+        UserGenderTxtView = view.findViewById(R.id.user_gender);
 
 
         /*making personal info visible*/
-        personalinfo.setVisibility(View.VISIBLE);
-        experience.setVisibility(View.GONE);
-        review.setVisibility(View.GONE);
 
-        personalinfobtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                personalinfo.setVisibility(View.VISIBLE);
-                experience.setVisibility(View.GONE);
-                review.setVisibility(View.GONE);
-                personalinfobtn.setTextColor(getResources().getColor(R.color.blue));
-                experiencebtn.setTextColor(getResources().getColor(R.color.grey));
-                reviewbtn.setTextColor(getResources().getColor(R.color.grey));
-
-            }
-        });
-
-        experiencebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                personalinfo.setVisibility(View.GONE);
-                experience.setVisibility(View.VISIBLE);
-                review.setVisibility(View.GONE);
-                personalinfobtn.setTextColor(getResources().getColor(R.color.grey));
-                experiencebtn.setTextColor(getResources().getColor(R.color.blue));
-                reviewbtn.setTextColor(getResources().getColor(R.color.grey));
-
-            }
-        });
-
-        reviewbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                personalinfo.setVisibility(View.GONE);
-                experience.setVisibility(View.GONE);
-                review.setVisibility(View.VISIBLE);
-                personalinfobtn.setTextColor(getResources().getColor(R.color.grey));
-                experiencebtn.setTextColor(getResources().getColor(R.color.grey));
-                reviewbtn.setTextColor(getResources().getColor(R.color.blue));
-
-            }
-        });
 
 
         userTypeReference = FirebaseDatabase.getInstance().getReference("UserType");
@@ -153,9 +101,9 @@ public class UserProfileView extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String UserType = snapshot.child(CurrentUserUid).child("userType").getValue().toString();
-                if(UserType.equals("Founder"))
+                if(UserType.equals("Investor"))
                 {
-                    founderReference = FirebaseDatabase.getInstance().getReference().child("Founder").child(CurrentUserUid);
+                    founderReference = FirebaseDatabase.getInstance().getReference().child("Investor").child(CurrentUserUid);
                     founderReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -198,6 +146,17 @@ public class UserProfileView extends Fragment {
             }
         });
 
+        LogoutText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+                firebaseAuth.signOut();
+                Toast.makeText(getContext(), "Logout successfully! ", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getActivity(), LoginOption.class);
+                startActivity(i);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
 
 
         return  view;

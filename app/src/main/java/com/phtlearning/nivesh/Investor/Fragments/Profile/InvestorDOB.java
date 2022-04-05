@@ -1,4 +1,4 @@
-package com.phtlearning.nivesh.Founder.Fragments.RaiseFund;
+package com.phtlearning.nivesh.Investor.Fragments.Profile;
 
 import android.app.DatePickerDialog;
 import android.icu.text.SimpleDateFormat;
@@ -16,21 +16,19 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.phtlearning.nivesh.Founder.Fragments.Profile.FounderUserGender;
 import com.phtlearning.nivesh.R;
 
-import java.text.ParseException;
-import java.util.Date;
 import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link EndDateFragment#newInstance} factory method to
+ * Use the {@link InvestorDOB#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EndDateFragment extends Fragment {
-
-    EditText EndDateEditText;
-    Button EndDateNxtBtn;
+public class InvestorDOB extends Fragment {
+    EditText StartDateEditText;
+    Button StartDateNxtBtn;
     final Calendar myCalendar= Calendar.getInstance();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,7 +39,7 @@ public class EndDateFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public EndDateFragment() {
+    public InvestorDOB() {
         // Required empty public constructor
     }
 
@@ -51,11 +49,11 @@ public class EndDateFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment EndDateFragment.
+     * @return A new instance of fragment InvestorDOB.
      */
     // TODO: Rename and change types and number of parameters
-    public static EndDateFragment newInstance(String param1, String param2) {
-        EndDateFragment fragment = new EndDateFragment();
+    public static InvestorDOB newInstance(String param1, String param2) {
+        InvestorDOB fragment = new InvestorDOB();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,10 +74,9 @@ public class EndDateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_end_date, container, false);
-        EndDateEditText = (EditText) view.findViewById(R.id.end_date_edt_xml);
-        EndDateNxtBtn = (Button)view.findViewById(R.id.end_next_btn);
-
+        View view = inflater.inflate(R.layout.fragment_investor_d_o_b, container, false);
+        StartDateEditText=(EditText) view.findViewById(R.id.investor_dob_edt_xml);
+        StartDateNxtBtn = (Button)view.findViewById(R.id.investor_dob_next_btn);
         DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -89,51 +86,46 @@ public class EndDateFragment extends Fragment {
                 updateLabel();
             }
         };
-
-        EndDateEditText.setOnClickListener(new View.OnClickListener() {
+        StartDateEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(getContext(),date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
 
-        String CompanyName = getArguments().getString("CompanyName");
-        String FounderName = getArguments().getString("FounderName");
-        String CoverImage = getArguments().getString("CoverImage");
-        String CompanyDiscription = getArguments().getString("CompanyDiscription");
-        String CompanyCategory = getArguments().getString("CompanyCategory");
-        String StartDate = getArguments().getString("StartDate");
+        String UserName = getArguments().getString("UserName");
+        String UserProfession = getArguments().getString("UserProfession");
 
-        EndDateNxtBtn.setOnClickListener(new View.OnClickListener() {
+
+        StartDateNxtBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String EndDate = EndDateEditText.getText().toString();
-                if(TextUtils.isEmpty(EndDate))
+                String UserDOB = StartDateEditText.getText().toString();
+
+                if(TextUtils.isEmpty(UserDOB))
                 {
                     Toast.makeText(getContext(), "This Field be Can't Empty", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
 
-                    MinInvestmentFragment obj = new MinInvestmentFragment();
+                    InvestorGender obj = new InvestorGender();
                     Bundle args = new Bundle();
-                    args.putString("CompanyName", CompanyName);
-                    args.putString("FounderName", FounderName);
-                    args.putString("CoverImage", CoverImage);
-                    args.putString("CompanyDiscription", CompanyDiscription);
-                    args.putString("CompanyCategory", CompanyCategory);
-                    args.putString("StartDate", StartDate);
-                    args.putString("EndDate", EndDate);
+                    args.putString("UserName", UserName);
+                    args.putString("UserProfession", UserProfession);
+                    args.putString("UserDOB", UserDOB);
+
                     obj.setArguments(args);
-                    getFragmentManager().beginTransaction().replace(R.id.fragment_container_view_tag, obj).commit();
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_investor_container_view_tag, obj).commit();
                 }
             }
         });
         return view;
     }
+
     private void updateLabel() {
-        String myFormat="MM/dd/yyyy";
+        String myFormat="dd/MM/yyyy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
-        EndDateEditText.setText(dateFormat.format(myCalendar.getTime()));
+        StartDateEditText.setText(dateFormat.format(myCalendar.getTime()));
     }
 }

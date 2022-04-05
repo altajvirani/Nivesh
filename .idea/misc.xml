@@ -50,6 +50,7 @@
         <entry key="..\:/Project/app/src/main/res/layout/activity_nav_bar.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layout/activity_splash_screen.xml" value="0.12360688956433637" />
         <entry key="..\:/Project/app/src/main/res/layout/fragment_insert_logo_raise_fund.xml" value="0.2391304347826087" />
+        <entry key="..\:/Project/app/src/main/res/layout/fragment_investor_gender.xml" value="0.17798913043478262" />
         <entry key="..\:/Project/app/src/main/res/layout/fragment_o_t_p_verification.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layout/fragment_raise_fund.xml" value="0.12512664640324214" />
         <entry key="..\:/Project/app/src/main/res/layout/fragment_target.xml" value="0.25416666666666665" />
@@ -73,7 +74,17 @@
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Logout/layout/fragment_logout.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Notification/layout/fragment_notification.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_about_me.xml" value="0.11018518518518519" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_about_me.xml" value="0.18885869565217392" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_otp_verification.xml" value="0.203125" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_profile_sumbit.xml" value="0.203125" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_user_contact_number.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_user_dob.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_user_gender.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_user_name_in_founder.xml" value="0.2028985507246377" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_user_profession.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_user_profile_image.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_user_profile_view.xml" value="0.21240942028985507" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_o_t_p_verification.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_profile_sumbit.xml" value="0.2259963768115942" />
@@ -83,8 +94,9 @@
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_user_gender.xml" value="0.25" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_user_name_in_founder.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_user_profession.xml" value="0.25416666666666665" />
-        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_user_profile_view.xml" value="0.1598731884057971" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_user_profile_view.xml" value="0.264" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_categories.xml" value="0.2151268115942029" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_company_form.xml" value="0.21240942028985507" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_contact_number.xml" value="0.2151268115942029" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_cover_image.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_description.xml" value="0.25" />
@@ -121,7 +133,17 @@
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/layout/fragment_investor_invest_fund.xml" value="0.20380434782608695" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Logout/layout/fragment_investor_logout.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Notification/layout/fragment_investor_notification.xml" value="0.20380434782608695" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_about_me.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_contact_number.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_d_o_b.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_gender.xml" value="0.1956521739130435" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_name.xml" value="0.25416666666666665" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_o_t_p_verification.xml" value="0.25416666666666665" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_profession.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_profile.xml" value="0.20380434782608695" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_profile_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_profile_sumbit.xml" value="0.25416666666666665" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_profile_view.xml" value="0.12360688956433637" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_o_t_p_verification.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/search/layout/fragment_investor_search.xml" value="0.20380434782608695" />
         <entry key="..\:/Project/app/src/main/res/layouts/splash_screen/layout/activity_splash_screen.xml" value="0.25416666666666665" />

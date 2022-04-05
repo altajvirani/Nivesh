@@ -3,7 +3,6 @@ package com.phtlearning.nivesh.Founder.Fragments.Profile;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
@@ -15,20 +14,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.phtlearning.nivesh.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link OTPVerification#newInstance} factory method to
+ * Use the {@link FounderOTPVerification#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OTPVerification extends Fragment {
+public class FounderOTPVerification extends Fragment {
      EditText otp1, otp2, otp3, otp4, otp5, otp6;
      Button VerfiyOtp;
     // TODO: Rename parameter arguments, choose names that match
@@ -40,7 +35,7 @@ public class OTPVerification extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public OTPVerification() {
+    public FounderOTPVerification() {
         // Required empty public constructor
     }
 
@@ -53,8 +48,8 @@ public class OTPVerification extends Fragment {
      * @return A new instance of fragment OTPVerification.
      */
     // TODO: Rename and change types and number of parameters
-    public static OTPVerification newInstance(String param1, String param2) {
-        OTPVerification fragment = new OTPVerification();
+    public static FounderOTPVerification newInstance(String param1, String param2) {
+        FounderOTPVerification fragment = new FounderOTPVerification();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -75,7 +70,7 @@ public class OTPVerification extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_o_t_p_verification, container, false);
+        View view = inflater.inflate(R.layout.fragment_founder_otp_verification, container, false);
 
         String UserName = getArguments().getString("UserName");
         String UserProfession = getArguments().getString("UserProfession");
@@ -263,7 +258,7 @@ public class OTPVerification extends Fragment {
                             if(OtpCode.equals(EnterOtp))
                             {
                                 progressDialog.hide();
-                                ProfileSumbit obj = new ProfileSumbit();
+                                FounderProfileSumbit obj = new FounderProfileSumbit();
                                 Bundle args = new Bundle();
                                 args.putString("UserName", UserName);
                                 args.putString("UserProfession", UserProfession);

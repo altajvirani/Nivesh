@@ -130,7 +130,7 @@ public class StartDateFragment extends Fragment {
     }
 
     private void updateLabel() {
-        String myFormat="dd/MM/yyyy";
+        String myFormat="MM/dd/yyyy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
         StartDateEditText.setText(dateFormat.format(myCalendar.getTime()));
 

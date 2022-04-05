@@ -20,11 +20,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.phtlearning.nivesh.Founder.DatabaseHelper.ProfileHelper;
 import com.phtlearning.nivesh.Founder.Fragments.Home.FounderHomeFragment;
 import com.phtlearning.nivesh.Founder.Fragments.Logout.FounderLogoutFragment;
 import com.phtlearning.nivesh.Founder.Fragments.Profile.FounderProfileFragment;
-import com.phtlearning.nivesh.Founder.Fragments.Profile.UserProfileView;
+import com.phtlearning.nivesh.Founder.Fragments.Profile.FounderUserProfileView;
 import com.phtlearning.nivesh.Founder.Fragments.RaiseFund.CompanyNameFragment;
 import com.phtlearning.nivesh.Founder.Fragments.Search.FounderSearchFragment;
 import com.phtlearning.nivesh.R;
@@ -149,7 +148,7 @@ public class FounderHomeActivity extends AppCompatActivity {
                                             else
                                             {
                                                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                                                fragmentTransaction.replace(R.id.fragment_container_view_tag, new UserProfileView());
+                                                fragmentTransaction.replace(R.id.fragment_container_view_tag, new FounderUserProfileView());
                                                 fragmentTransaction.commit();
                                             }
                                         }

@@ -1,4 +1,4 @@
-package com.phtlearning.nivesh.Founder.Fragments.Profile;
+package com.phtlearning.nivesh.Investor.Fragments.Profile;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
 
@@ -18,15 +18,15 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.github.dhaval2404.imagepicker.ImagePicker;
-import com.phtlearning.nivesh.Founder.Fragments.RaiseFund.DescriptionFragment;
+import com.phtlearning.nivesh.Founder.Fragments.Profile.FounderAboutMe;
 import com.phtlearning.nivesh.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link UserProfileImage#newInstance} factory method to
+ * Use the {@link InvestorProfileImage#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UserProfileImage extends Fragment {
+public class InvestorProfileImage extends Fragment {
     ImageView ProfileImageView;
     Button ProfilePickImageBtn, ProfileImageNxtBtn;
     ActivityResultLauncher<String> mGetContent;
@@ -40,7 +40,7 @@ public class UserProfileImage extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public UserProfileImage() {
+    public InvestorProfileImage() {
         // Required empty public constructor
     }
 
@@ -50,11 +50,11 @@ public class UserProfileImage extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment UserFrofileImage.
+     * @return A new instance of fragment InvestorProfileImage.
      */
     // TODO: Rename and change types and number of parameters
-    public static UserProfileImage newInstance(String param1, String param2) {
-        UserProfileImage fragment = new UserProfileImage();
+    public static InvestorProfileImage newInstance(String param1, String param2) {
+        InvestorProfileImage fragment = new InvestorProfileImage();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -75,15 +75,15 @@ public class UserProfileImage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_user_frofile_image, container, false);
+        View view = inflater.inflate(R.layout.fragment_investor_profile_image, container, false);
         String UserName = getArguments().getString("UserName");
         String UserProfession = getArguments().getString("UserProfession");
         String UserDOB = getArguments().getString("UserDOB");
         String UserGender = getArguments().getString("UserGender");
 
-        ProfileImageView = view.findViewById(R.id.profile_image_view);
-        ProfilePickImageBtn = (Button)view.findViewById(R.id.profile_image_btn);
-        ProfileImageNxtBtn = (Button)view.findViewById(R.id.profile_next_btn);
+        ProfileImageView = view.findViewById(R.id.investor_profile_image_view);
+        ProfilePickImageBtn = (Button)view.findViewById(R.id.investor_profile_image_btn);
+        ProfileImageNxtBtn = (Button)view.findViewById(R.id.investor_profile_next_btn);
 
         ProfilePickImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,14 +93,14 @@ public class UserProfileImage extends Fragment {
                         .galleryOnly()//Crop image(Optional), Check Customization for more option
                         .compress(1024)			//Final image size will be less than 1 MB(Optional)
                         .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
-                        .start(2);
+                        .start(1);
             }
         });
 
         ProfileImageNxtBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AboutMe obj = new AboutMe();
+                InvestorAboutMe obj = new InvestorAboutMe();
                 Bundle args = new Bundle();
                 args.putString("UserName", UserName);
                 args.putString("UserProfession", UserProfession);
@@ -108,7 +108,7 @@ public class UserProfileImage extends Fragment {
                 args.putString("UserGender", UserGender);
                 args.putString("ProfileImage", ProfileImage);
                 obj.setArguments(args);
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container_view_tag, obj).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_investor_container_view_tag, obj).commit();
             }
         });
 
@@ -118,7 +118,7 @@ public class UserProfileImage extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 2)
+        if(requestCode == 1)
         {
             Uri uri = data.getData();
             if(uri == null)
