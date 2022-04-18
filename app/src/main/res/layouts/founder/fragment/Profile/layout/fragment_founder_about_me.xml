@@ -14,7 +14,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="About Me"
         android:textColor="@color/blue"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/til_title"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,14 +31,15 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/about_me_edit_txt"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="100dp"
             android:ems="10"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-condensed"
-            android:hint="Enter About YourSelf"
+            android:hint="  Enter About YourSelf..."
             android:inputType="text"
             android:maxLength="100"
-            android:background="@drawable/otpbg"
+            android:background="@drawable/round_border"
             android:textColor="@color/blue_active"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>

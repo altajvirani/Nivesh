@@ -100,7 +100,7 @@ public class CompanyForm extends Fragment {
                 {
 
                     String CompanyForm = selectedRadioButton.getText().toString();
-                    SubmitFragment obj = new SubmitFragment();
+                    EquityOfCompany obj = new EquityOfCompany();
                     Bundle args = new Bundle();
                     args.putString("CompanyName", CompanyName);
                     args.putString("FounderName", FounderName);

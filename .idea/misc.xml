@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/app/src/main/res/drawable-hdpi/round_border.xml" value="0.1335" />
         <entry key="..\:/Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1135" />
         <entry key="..\:/Project/app/src/main/res/drawable/btnbg.xml" value="0.14" />
         <entry key="..\:/Project/app/src/main/res/drawable/call_background_stroke.xml" value="0.2595" />
@@ -26,8 +27,12 @@
         <entry key="..\:/Project/app/src/main/res/drawable/ic_home.xml" value="0.1935" />
         <entry key="..\:/Project/app/src/main/res/drawable/ic_like.xml" value="0.122" />
         <entry key="..\:/Project/app/src/main/res/drawable/ic_location_24dp.xml" value="0.1255" />
+        <entry key="..\:/Project/app/src/main/res/drawable/ic_notifications_white_24dp.xml" value="0.1335" />
         <entry key="..\:/Project/app/src/main/res/drawable/ic_person.xml" value="0.1935" />
+        <entry key="..\:/Project/app/src/main/res/drawable/ic_photos.xml" value="0.1335" />
         <entry key="..\:/Project/app/src/main/res/drawable/ic_playlist.xml" value="0.122" />
+        <entry key="..\:/Project/app/src/main/res/drawable/ic_restaurant.xml" value="0.1335" />
+        <entry key="..\:/Project/app/src/main/res/drawable/ic_room.xml" value="0.1335" />
         <entry key="..\:/Project/app/src/main/res/drawable/ic_search.xml" value="0.1935" />
         <entry key="..\:/Project/app/src/main/res/drawable/ic_settings.xml" value="0.1935" />
         <entry key="..\:/Project/app/src/main/res/drawable/like_background_oval.xml" value="0.1285" />
@@ -51,6 +56,7 @@
         <entry key="..\:/Project/app/src/main/res/layout/activity_main_.xml" value="0.1" />
         <entry key="..\:/Project/app/src/main/res/layout/activity_nav_bar.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layout/activity_splash_screen.xml" value="0.12360688956433637" />
+        <entry key="..\:/Project/app/src/main/res/layout/fragment_equity_of_company.xml" value="0.1838768115942029" />
         <entry key="..\:/Project/app/src/main/res/layout/fragment_insert_logo_raise_fund.xml" value="0.2391304347826087" />
         <entry key="..\:/Project/app/src/main/res/layout/fragment_investor_gender.xml" value="0.17798913043478262" />
         <entry key="..\:/Project/app/src/main/res/layout/fragment_o_t_p_verification.xml" value="0.25416666666666665" />
@@ -99,6 +105,7 @@
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_user_profile_view.xml" value="0.264" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_categories.xml" value="0.2151268115942029" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_company_form.xml" value="0.21240942028985507" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_company_name.xml" value="0.21422101449275363" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_contact_number.xml" value="0.2151268115942029" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_cover_image.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_description.xml" value="0.25" />
@@ -119,6 +126,7 @@
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_submit.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_target.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_web_site.xml" value="0.2151268115942029" />
+        <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/search/layout/fragment_founder_search.xml" value="0.21422101449275363" />
         <entry key="..\:/Project/app/src/main/res/layouts/founder/fragment/search/layout/fragment_search.xml" value="0.16530797101449277" />
         <entry key="..\:/Project/app/src/main/res/layouts/home/layout/activity_founder_home.xml" value="0.21467391304347827" />
         <entry key="..\:/Project/app/src/main/res/layouts/home/layout/activity_home.xml" value="0.25416666666666665" />
@@ -129,9 +137,18 @@
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_investor_home.xml" value="0.20380434782608695" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Home/layout/startup_search_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/Home/layout/startupsearch_bottomsheet.xml" value="0.1296875" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic__calendar.xml" value="0.1335" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_add.xml" value="0.122" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_categories.xml" value="0.1335" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_company_name.xml" value="0.1335" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_contact_number.xml" value="0.1335" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_dob.xml" value="0.132" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_emp_number.xml" value="0.1335" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_equity.xml" value="0.122" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_logout.xml" value="0.122" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_money.xml" value="0.1335" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_url.xml" value="0.1335" />
+        <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/ic_user_profession.xml" value="0.1335" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/l_item_raise_add.xml" value="0.122" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/drawable/person_profile.xml" value="0.1255" />
         <entry key="..\:/Project/app/src/main/res/layouts/investor/fragment/InvestFund/layout/fragment_investor_invest_fund.xml" value="0.20380434782608695" />

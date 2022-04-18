@@ -11,7 +11,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="Your Name"
         android:textColor="@color/blue"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/investor_name_edt_txt"
         app:layout_constraintTop_toTopOf="parent"

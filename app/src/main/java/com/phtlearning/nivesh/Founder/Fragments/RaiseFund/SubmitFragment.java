@@ -109,6 +109,10 @@ public class SubmitFragment extends Fragment {
         String TotalEmp = getArguments().getString("TotalEmp");
         String WebSiteLink = getArguments().getString("WebSiteLink");
         String CompanyForm = getArguments().getString("CompanyForm");
+        String Equity = getArguments().getString("Equity");
+        String RaisedAmount = "0";
+
+        String Status = "running";
 
         Uri CoverImageUri = Uri.parse(CoverImage);
 
@@ -142,16 +146,13 @@ public class SubmitFragment extends Fragment {
                                         {
                                             RaiseFundHelper raiseFundHelper = new RaiseFundHelper(CompanyName,FounderName,uri.toString(),CompanyDiscription,CompanyCategory
                                                     ,StartDate,EndDate,MinInvestment,TotalTargetAmount,TotalInvestors,ProblemStatement,SolutionStatement,PitchLink,
-                                                    TotalRevenue,TotalEmp,WebSiteLink,CompanyForm);
+                                                    TotalRevenue,TotalEmp,WebSiteLink,CompanyForm,Equity,Status,RaisedAmount);
                                             RaiseFundHelper startupHelper = new RaiseFundHelper(CompanyName);
 
                                             startupReference.push().setValue(startupHelper);
                                             categoryReference.child(CompanyCategory).child(CompanyName).setValue(raiseFundHelper);
-
-                                            founderReference.child(CurrentUserUid).child("Startups").push().setValue(raiseFundHelper);
+                                            founderReference.child(CurrentUserUid).child("Startups").child(CompanyCategory).child(CompanyName).setValue(raiseFundHelper);
                                             Toast.makeText(getContext(), "Successfully!", Toast.LENGTH_SHORT).show();
-
-
                                             progressDialog.hide();
                                         }
                                         else

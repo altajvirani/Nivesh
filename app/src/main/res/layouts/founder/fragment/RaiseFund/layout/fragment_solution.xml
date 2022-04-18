@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="solution"
+        android:text="Solution"
         android:textColor="@color/blue"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,11 +33,13 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/solution_edit_txt"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="250dp"
             android:ems="10"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-condensed"
-            android:hint="Enter Solution"
+            android:background="@drawable/round_border"
+            android:hint="   Enter Solution Here,,,"
             android:maxLength="500"
             android:textColor="@color/blue_active"
             android:textSize="15sp" />

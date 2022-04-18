@@ -10,15 +10,14 @@
         android:id="@+id/header3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="problem"
+        android:gravity="center"
+        android:text="Problem Statement"
         android:textColor="@color/blue"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/til_title"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.245" />
 
@@ -33,12 +32,14 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/problem_edit_txt"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="250dp"
             android:ems="10"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-condensed"
-            android:hint="Enter Problem"
+            android:hint="  Enter Problem Statement Here..."
             android:maxLength="500"
+            android:background="@drawable/round_border"
             android:textColor="@color/blue_active"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>

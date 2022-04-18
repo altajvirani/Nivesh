@@ -132,7 +132,7 @@ public class EndDateFragment extends Fragment {
         return view;
     }
     private void updateLabel() {
-        String myFormat="MM/dd/yyyy";
+        String myFormat="MM-dd-yyyy HH:mm:ss";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
         EndDateEditText.setText(dateFormat.format(myCalendar.getTime()));
     }

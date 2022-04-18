@@ -1,9 +1,9 @@
 package com.phtlearning.nivesh.Founder.DatabaseHelper;
 
 public class RaiseFundHelper {
-    String CompanyName, FounderName, CompanyLogo, CompanyDiscription, CompanyCategory, StartDate, EndDate, MinInvestment,
+    String CompanyName, FounderName, CompanyLogo, CompanyDescription, CompanyCategory, StartDate, EndDate, MinAmount,
             TotalTargetAmount, TotalInvestors, ProblemStatement, SolutionStatement, PitchLink, TotalRevenue,
-            TotalEmp, WebSiteLink, CompanyForm;
+            TotalEmp, WebSiteLink, CompanyForm,Equity, Status, RaisedAmount;
 
     public RaiseFundHelper() {
     }
@@ -12,35 +12,15 @@ public class RaiseFundHelper {
         CompanyName = companyName;
     }
 
-
-    public RaiseFundHelper(String companyName, String founderName, String companyLogo, String companyDiscription, String companyCategory, String startDate, String endDate, String minInvestment, String totalTargetAmount, String totalInvestors, String problemStatement, String solutionStatement, String pitchLink, String totalRevenue, String totalEmp, String webSiteLink) {
+    public RaiseFundHelper(String companyName, String founderName, String companyLogo, String companyDescription, String companyCategory, String startDate, String endDate, String minAmount, String totalTargetAmount, String totalInvestors, String problemStatement, String solutionStatement, String pitchLink, String totalRevenue, String totalEmp, String webSiteLink, String companyForm, String equity, String status, String raisedAmount) {
         CompanyName = companyName;
         FounderName = founderName;
         CompanyLogo = companyLogo;
-        CompanyDiscription = companyDiscription;
+        CompanyDescription = companyDescription;
         CompanyCategory = companyCategory;
         StartDate = startDate;
         EndDate = endDate;
-        MinInvestment = minInvestment;
-        TotalTargetAmount = totalTargetAmount;
-        TotalInvestors = totalInvestors;
-        ProblemStatement = problemStatement;
-        SolutionStatement = solutionStatement;
-        PitchLink = pitchLink;
-        TotalRevenue = totalRevenue;
-        TotalEmp = totalEmp;
-        WebSiteLink = webSiteLink;
-    }
-
-    public RaiseFundHelper(String companyName, String founderName, String companyLogo, String companyDiscription, String companyCategory, String startDate, String endDate, String minInvestment, String totalTargetAmount, String totalInvestors, String problemStatement, String solutionStatement, String pitchLink, String totalRevenue, String totalEmp, String webSiteLink, String companyForm) {
-        CompanyName = companyName;
-        FounderName = founderName;
-        CompanyLogo = companyLogo;
-        CompanyDiscription = companyDiscription;
-        CompanyCategory = companyCategory;
-        StartDate = startDate;
-        EndDate = endDate;
-        MinInvestment = minInvestment;
+        MinAmount = minAmount;
         TotalTargetAmount = totalTargetAmount;
         TotalInvestors = totalInvestors;
         ProblemStatement = problemStatement;
@@ -50,6 +30,33 @@ public class RaiseFundHelper {
         TotalEmp = totalEmp;
         WebSiteLink = webSiteLink;
         CompanyForm = companyForm;
+        Equity = equity;
+        Status = status;
+        RaisedAmount = raisedAmount;
+    }
+
+    public String getRaisedAmount() {
+        return RaisedAmount;
+    }
+
+    public void setRaisedAmount(String raisedAmount) {
+        RaisedAmount = raisedAmount;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
+    }
+
+    public String getEquity() {
+        return Equity;
+    }
+
+    public void setEquity(String equity) {
+        Equity = equity;
     }
 
     public String getCompanyForm() {
@@ -84,12 +91,12 @@ public class RaiseFundHelper {
         CompanyLogo = companyLogo;
     }
 
-    public String getCompanyDiscription() {
-        return CompanyDiscription;
+    public String getCompanyDescription() {
+        return CompanyDescription;
     }
 
-    public void setCompanyDiscription(String companyDiscription) {
-        CompanyDiscription = companyDiscription;
+    public void setCompanyDescription(String companyDescription) {
+        CompanyDescription = companyDescription;
     }
 
     public String getCompanyCategory() {
@@ -116,12 +123,12 @@ public class RaiseFundHelper {
         EndDate = endDate;
     }
 
-    public String getMinInvestment() {
-        return MinInvestment;
+    public String getMinAmount() {
+        return MinAmount;
     }
 
-    public void setMinInvestment(String minInvestment) {
-        MinInvestment = minInvestment;
+    public void setMinAmount(String minAmount) {
+        MinAmount = minAmount;
     }
 
     public String getTotalTargetAmount() {
