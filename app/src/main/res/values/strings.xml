@@ -37,11 +37,9 @@
     <string name="google_signup">Google Signup</string>
     <string name="sname1">OpenSea</string>
     <string name="sname2">Ather Energy</string>
-    <string name="ssubtitle2"><![CDATA[We design, manufacture & sell high-performance smart e-scooter. Setting up Ather Grid, a network of fast charging points, we seek to redifine consumer experience.]]></string>
     <string name="s2tag1">EV</string>
     <string name="s2tag2">Automobile</string>
     <string name="s2prog">38.83%</string>
-    <string name="noofinv">36</string>
     <string name="investors">investors</string>
     <string name="raised">raised</string>
     <string name="daysleft">Days Left</string>
@@ -118,8 +116,37 @@
     <string name="finance">Finance</string>
     <string name="education">Education</string>
 
-
+    <string name="show_inactive_deals">Show Inactive Deals</string>
+    <string name="amtraised">5,68,000</string>
+    <string name="raised_of">raised of</string>
+    <string name="totalamt">10,00,000</string>
+    <string name="openingbracket">(</string>
+    <string name="percentraised">56.80</string>
+    <string name="closingbracket">)</string>
+    <string name="invest">Invest</string>
+    <string name="description">Description</string>
+    <string name="pitch">Pitch</string>
+    <string name="problem_statement">Problem Statement</string>
+    <string name="solution">Solution</string>
+    <string name="business_model">Business Model</string>
+    <string name="market_value">Market Value</string>
+    <string name="revenue_distribution">Revenue Distribution</string>
+    <string name="about_the_team">About the Team</string>
+    <string name="enter_amount_to_invest">Enter amount to invest</string>
+    <string name="done">Done</string>
+    <string name="eg_8000">Eg. 8000</string>
+    <string name="equity_for_the_amount">Equity for the amount</string>
+    <string name="equity">0.00</string>
+    <string name="faqs">FAQs</string>
+    <string name="customers">Customers</string>
     <string name="timeleft">Time Remaining</string>
+    <string name="user_profile">User Profile</string>
 
+    <string name="ssubtitle2"><![CDATA[We design, manufacture & sell high-performance smart e-scooter. Setting up Ather Grid, a network of fast charging points, we seek to redifine consumer experience.]]></string>
+    <string name="tag1">Technology</string>
+    <string name="tag2">Software</string>
+    <string name="tag3">Blockchain</string>
+    <string name="prog">39</string>
+    <string name="noofinv">36</string>
 
 </resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sortbyarray">
+        <item name="ascending">Ascending</item>
+        <item name="ascending">Descending</item>
+    </string-array>
+</resources>

@@ -24,7 +24,6 @@ import com.phtlearning.nivesh.R;
 
 public class SplashScreen extends AppCompatActivity {
 
-    ProgressBar progressBar;
 
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
@@ -33,11 +32,10 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("UserType");
 
-        progressBar.setVisibility(View.VISIBLE);
+
 
 //        Thread background = new Thread() {
 //            public void run() {

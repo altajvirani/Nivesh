@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.phtlearning.nivesh.Founder.Fragments.Home.FounderHomeFragment;
 import com.phtlearning.nivesh.Founder.Fragments.Profile.FounderProfileFragment;
 import com.phtlearning.nivesh.Founder.Fragments.Profile.FounderUserProfileView;
-import com.phtlearning.nivesh.Investor.Fragments.Home.InvestorHomeFragment;
+import com.phtlearning.nivesh.Investor.Fragments.Home.Fragments.SearchFragment;
 import com.phtlearning.nivesh.Investor.Fragments.InvestFund.InvestorInvestFundFragment;
 import com.phtlearning.nivesh.Investor.Fragments.Logout.InvestorLogoutFragment;
 import com.phtlearning.nivesh.Investor.Fragments.Profile.InvestorName;
@@ -68,7 +68,7 @@ public class InvestorHomeActivity extends AppCompatActivity {
                 {
                     case 0:
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorHomeFragment());
+                        fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new SearchFragment());
                         fragmentTransaction.commit();
                         break;
 

@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="1dp">
+
+        <LinearLayout
+            android:id="@+id/bottombtns"
+            android:layout_marginBottom="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_alignParentBottom="true"
+            android:elevation="0.1dp"
+            android:background="@android:color/transparent"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:targetApi="p">
+
+            <Button
+                android:outlineAmbientShadowColor="@color/white"
+                android:shadowColor="@color/white"
+                android:id="@+id/invest"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/investbtn"
+                android:fontFamily="@font/montserrat_semibold"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:outlineSpotShadowColor="@color/dgrey"
+                android:stateListAnimator="@null"
+                android:text="@string/invest"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UnusedAttribute" />
+
+            <ImageButton
+                android:id="@+id/savebtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="14dp"
+                android:background="@drawable/noshadowbtn"
+                android:contentDescription="@string/save_for_later"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/savedbg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toEndOf="@+id/cname"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.035"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/view_swiperefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ScrollView01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/coverimg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="-15dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/cardbg2"
+                            tools:ignore="ContentDescription" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/coverimg"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="-25dp"
+                            android:background="@drawable/nobottomradiusbg"
+                            android:elevation="10dp"
+                            app:cardCornerRadius="35dp">
+
+                            <TextView
+                                android:id="@+id/cname"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="31dp"
+                                android:layout_marginEnd="25dp"
+                                android:layout_marginBottom="25dp"
+                                android:ellipsize="marquee"
+                                android:fontFamily="@font/nunito_black"
+                                android:maxLines="1"
+                                android:text="@string/sname2"
+                                android:textColor="@color/black"
+                                android:textSize="26sp" />
+
+                            <ImageButton
+                                android:id="@+id/dot_menu_btn"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="25dp"
+                                android:layout_marginEnd="25dp"
+                                android:background="@drawable/noshadowbtn"
+                                android:contentDescription="@string/dot_menu"
+                                android:padding="15dp"
+                                android:paddingStart="12dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/share"
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                            <com.google.android.flexbox.FlexboxLayout
+                                android:id="@+id/flexlayout2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cname"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="-15dp"
+                                android:layout_marginEnd="25dp"
+                                android:padding="2dp"
+                                app:alignContent="flex_start"
+                                app:alignItems="flex_start"
+                                app:flexWrap="wrap">
+
+                                <Button
+                                    android:id="@+id/tag1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="7dp"
+                                    android:background="@drawable/tagbg"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:minWidth="0dp"
+                                    android:minHeight="0dp"
+                                    android:paddingStart="9dp"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="9dp"
+                                    android:paddingBottom="4dp"
+                                    android:stateListAnimator="@null"
+                                    android:text="@string/tag1"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/lavenderblue"
+                                    android:textSize="14sp"
+                                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+                                <Button
+                                    android:id="@+id/tag2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="7dp"
+                                    android:background="@drawable/tagbg"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:minWidth="0dp"
+                                    android:minHeight="0dp"
+                                    android:paddingStart="9dp"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="9dp"
+                                    android:paddingBottom="4dp"
+                                    android:stateListAnimator="@null"
+                                    android:text="@string/tag2"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/lavenderblue"
+                                    android:textSize="14sp"
+                                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+                            </com.google.android.flexbox.FlexboxLayout>
+
+                            <LinearLayout
+                                android:id="@+id/perraisedindic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/flexlayout2"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="25dp">
+
+                                <TextView
+                                    android:id="@+id/amtraised"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="4.5dp"
+                                    android:fontFamily="@font/nunito_black"
+                                    android:text="@string/amtraised"
+                                    android:textColor="@color/black"
+                                    android:textSize="13.5sp" />
+
+                                <TextView
+                                    android:id="@+id/raised"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="4.5dp"
+                                    android:fontFamily="@font/nunito_medium"
+                                    android:text="@string/raised_of"
+                                    android:textColor="@color/dgrey"
+                                    android:textSize="13.5sp" />
+
+                                <TextView
+                                    android:id="@+id/totalraised"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="4.5dp"
+                                    android:fontFamily="@font/nunito_black"
+                                    android:text="@string/totalamt"
+                                    android:textColor="@color/black"
+                                    android:textSize="13.5sp" />
+
+                                <TextView
+                                    android:id="@+id/openingbracket"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="1dp"
+                                    android:fontFamily="@font/nunito_medium"
+                                    android:text="@string/openingbracket"
+                                    android:textColor="@color/dgrey"
+                                    android:textSize="13.5sp" />
+
+                                <TextView
+                                    android:id="@+id/per"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="1dp"
+                                    android:fontFamily="@font/nunito_black"
+                                    android:text="@string/percentraised"
+                                    android:textColor="@color/black"
+                                    android:textSize="13.5sp" />
+
+                                <TextView
+                                    android:id="@+id/persym"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="1dp"
+                                    android:fontFamily="@font/nunito_medium"
+                                    android:text="@string/percent_sym"
+                                    android:textColor="@color/dgrey"
+                                    android:textSize="13.5sp" />
+
+                                <TextView
+                                    android:id="@+id/closingbracket"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_medium"
+                                    android:text="@string/closingbracket"
+                                    android:textColor="@color/dgrey"
+                                    android:textSize="13.5sp" />
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/raisingprogbar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="16dp"
+                                android:layout_below="@id/perraisedindic"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginEnd="25dp"
+                                android:indeterminate="false"
+                                android:progressDrawable="@drawable/progbg"
+                                tools:progress="39" />
+
+                            <LinearLayout
+                                android:id="@+id/indic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/raisingprogbar"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginEnd="25dp"
+                                android:layout_marginTop="15dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/timeleft"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunito_black"
+                                        android:text="@string/noofdaysleft"
+                                        android:textColor="@color/orange"
+                                        android:textSize="24sp"
+                                        tools:ignore="TextContrastCheck" />
+
+                                    <TextView
+                                        android:id="@+id/timeleftst"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunito_medium"
+                                        android:text="@string/timeleft"
+                                        android:textColor="@color/dgrey"
+                                        android:textSize="12sp"
+                                        tools:ignore="TextContrastCheck" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="0.5dp"
+                                    android:layout_height="60dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:background="@color/mgrey" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/noin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunito_black"
+                                        android:text="@string/noofinv"
+                                        android:textColor="@color/mutedlavender"
+                                        android:textSize="24sp"
+                                        tools:ignore="TextContrastCheck" />
+
+                                    <TextView
+                                        android:id="@+id/noinst"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunito_medium"
+                                        android:text="@string/no_of_investors"
+                                        android:textColor="@color/dgrey"
+                                        android:textSize="12sp"
+                                        tools:ignore="TextContrastCheck" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="0.5dp"
+                                    android:layout_height="60dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:background="@color/mgrey" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/rssym"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="@font/nunito_black"
+                                            android:paddingEnd="0.5dp"
+                                            android:text="@string/rupeesymbol"
+                                            android:textColor="@color/lightmutedblue"
+                                            android:textSize="24sp"
+                                            tools:ignore="TextContrastCheck" />
+
+                                        <TextView
+                                            android:id="@+id/minam"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/nunito_black"
+                                            android:text="@string/amount"
+                                            android:textColor="@color/lightmutedblue"
+                                            android:textSize="24sp"
+                                            tools:ignore="TextContrastCheck" />
+
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/minamst"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunito_medium"
+                                        android:text="@string/minamount"
+                                        android:textColor="@color/dgrey"
+                                        android:textSize="12sp"
+                                        tools:ignore="TextContrastCheck" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/relativeLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/indic"
+                                android:layout_marginTop="15dp">
+
+                                <com.google.android.material.tabs.TabLayout
+                                    android:id="@+id/viewtabbar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:elevation="10dp"
+                                    android:nestedScrollingEnabled="true"
+                                    android:overScrollMode="always"
+                                    android:paddingStart="25dp"
+                                    android:paddingEnd="25dp"
+                                    app:tabIndicatorColor="@color/mutedlavender"
+                                    app:tabIndicatorHeight="4dp"
+                                    app:tabMode="scrollable"
+                                    app:tabSelectedTextColor="@color/mutedlavender"
+                                    app:tabTextAppearance="@style/CustomTextAppearanceTab">
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/description" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/pitch" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/problem_statement" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/solution" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/business_model" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/customers" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/market_value" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/revenue_distribution" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/faqs" />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/about_the_team" />
+
+                                </com.google.android.material.tabs.TabLayout>
+
+                                <androidx.viewpager.widget.ViewPager
+                                    android:id="@+id/viewpager"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="685dp"
+                                    android:layout_below="@id/viewtabbar"
+                                    android:background="@android:color/transparent"
+                                    android:nestedScrollingEnabled="true" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"
+        android:id="@+id/invisibletextview"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
+
+
+
+

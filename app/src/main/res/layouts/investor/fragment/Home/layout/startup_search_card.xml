@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical">-->
 
     <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/startupcard"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="29dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/cardcolor"
         android:outlineSpotShadowColor="@color/dgrey"
         app:cardBackgroundColor="@color/white"
@@ -27,7 +29,7 @@
             android:layout_height="match_parent"
             android:layout_margin="16dp"
             android:orientation="vertical"
-            android:paddingBottom="7dp">
+            android:paddingBottom="6dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -51,8 +53,8 @@
 
                 <ImageButton
                     android:id="@+id/dot_menu_btn"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="6.5dp"
@@ -71,21 +73,22 @@
                     app:layout_constraintVertical_bias="0"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-                <!--                <ImageView-->
-                <!--                    android:layout_width="145dp"-->
-                <!--                    android:layout_height="38dp"-->
-                <!--                    android:adjustViewBounds="true"-->
-                <!--                    android:visibility="invisible"-->
-                <!--                    android:background="@drawable/dealclosed"-->
-                <!--                    android:layout_marginTop="6dp"-->
-                <!--                    android:id="@+id/dealclosedbtn"-->
-                <!--                    android:layout_marginStart="6.5dp"-->
-                <!--                    app:layout_constraintHorizontal_bias="0"-->
-                <!--                    app:layout_constraintVertical_bias="0"-->
-                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-                <!--                    app:layout_constraintStart_toStartOf="parent"-->
-                <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+                <ImageButton
+                    android:layout_width="141dp"
+                    android:layout_height="37dp"
+                    android:adjustViewBounds="true"
+                    android:visibility="gone"
+                    android:background="@drawable/dealclosedbg"
+                    android:elevation="8dp"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/dealclosedbtn"
+                    android:layout_marginStart="6dp"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintVertical_bias="0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -115,66 +118,67 @@
                 android:maxLines="4"
                 android:text="@string/ssubtitle2"
                 android:textColor="@color/dgrey"
-                android:textSize="15sp" />
+                android:textSize="15.5sp" />
 
-            <LinearLayout
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/flexlayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginBottom="9dp"
-                android:orientation="horizontal">
+                android:layout_marginEnd="8dp"
+                android:padding="2dp"
+                app:alignContent="flex_start"
+                app:alignItems="flex_start"
+                app:flexWrap="wrap">
 
                 <Button
-                    android:id="@+id/s2tag1"
+                    android:id="@+id/tag1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginBottom="2dp"
+                    android:layout_marginEnd="7dp"
                     android:background="@drawable/tagbg"
                     android:fontFamily="@font/nunito_regular"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:paddingStart="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingEnd="6dp"
-                    android:paddingBottom="2dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="9dp"
+                    android:paddingBottom="4dp"
                     android:stateListAnimator="@null"
-                    android:text="@string/s2tag1"
+                    android:text="@string/tag1"
                     android:textAllCaps="false"
                     android:textColor="@color/lavenderblue"
                     android:textSize="14sp"
                     tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
                 <Button
-                    android:id="@+id/s2tag2"
+                    android:id="@+id/tag2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
+                    android:layout_marginEnd="7dp"
                     android:background="@drawable/tagbg"
                     android:fontFamily="@font/nunito_regular"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:paddingStart="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingEnd="6dp"
-                    android:paddingBottom="2dp"
+                    android:paddingStart="9dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="9dp"
+                    android:paddingBottom="4dp"
                     android:stateListAnimator="@null"
-                    android:text="@string/s2tag2"
+                    android:text="@string/tag2"
                     android:textAllCaps="false"
                     android:textColor="@color/lavenderblue"
                     android:textSize="14sp"
                     tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
-            </LinearLayout>
+            </com.google.android.flexbox.FlexboxLayout>
 
             <ProgressBar
                 android:id="@+id/raisingprogbar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="17dp"
+                android:layout_height="16dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="3dp"
@@ -215,7 +219,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_black"
-                    android:text="@string/s2prog"
+                    android:text="@string/prog"
                     android:textColor="@color/black"
                     android:textSize="12.5sp" />
 
@@ -313,4 +317,4 @@
 
     </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+<!--</LinearLayout>-->

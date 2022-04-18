@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/startupsearchbottomsheet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bottomsheetbg"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="@drawable/bottomsheetbg">
 
     <ImageView
         android:layout_gravity="center"
@@ -15,18 +15,62 @@
         android:layout_height="4dp"
         android:src="@drawable/dragdownsymbol"/>
 
-    <TextView
-        android:id="@+id/header1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity=""
-        android:fontFamily="@font/nunito_extrabold"
         android:layout_marginTop="10dp"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/filter"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:layout_marginEnd="13dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/header1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/filter"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:elevation="4dp"
+            android:layout_gravity="center"
+            android:outlineSpotShadowColor="@color/mgrey"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="140dp"
+            android:layout_height="34dp"
+            android:background="@drawable/sortbyspinnerbg"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sortbyspinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:popupBackground="@drawable/sortbyspinnerbg"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="end"
+                android:paddingEnd="2dp"
+                android:src="@drawable/spinnerdropdownicon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/header2"
@@ -35,7 +79,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/nunito_semibold"
+        android:fontFamily="@font/nunito_medium"
         android:text="@string/all_categories"
         android:textColor="@color/vdgrey"
         android:textSize="16sp"/>
@@ -148,7 +192,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/nunito_semibold"
+        android:fontFamily="@font/nunito_medium"
         android:text="@string/sort_by"
         android:textColor="@color/vdgrey"
         android:textSize="16sp" />
@@ -267,6 +311,34 @@
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </com.google.android.flexbox.FlexboxLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_medium"
+            android:paddingEnd="10dp"
+            android:text="@string/show_inactive_deals"
+            android:textColor="@color/vdgrey"
+            android:textSize="17sp" />
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/showinactivedeals"
+            app:sb_checked_color="@color/blue"
+            android:layout_width="54dp"
+            android:layout_height="30dp"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
