@@ -29,14 +29,14 @@
             android:id="@+id/abttext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
             android:clickable="true"
+            android:ellipsize="end"
+            android:focusable="true"
             android:fontFamily="@font/nunito_bold"
             android:lineSpacingMultiplier="0.9"
             android:text="@string/about_the_team"
             android:textColor="@color/mutedlavender"
-            android:textSize="16sp"
-            android:focusable="true" />
+            android:textSize="16sp" />
 
     </com.google.android.flexbox.FlexboxLayout>
 

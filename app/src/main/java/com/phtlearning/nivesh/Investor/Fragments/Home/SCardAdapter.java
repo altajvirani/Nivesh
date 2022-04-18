@@ -2,7 +2,7 @@ package com.phtlearning.nivesh.Investor.Fragments.Home;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -14,18 +14,23 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.phtlearning.nivesh.Investor.Fragments.Home.Fragments.ViewFragment;
 import com.phtlearning.nivesh.R;
-
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -35,6 +40,10 @@ import java.util.Locale;
 import java.util.Objects;
 
 public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHolder> {
+
+    DatabaseReference founderReference, userTypeReference;
+
+
     @Nullable private final ArrayList<SCard> sCardList;
     private final boolean showInactiveDeals;
 
@@ -63,7 +72,7 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
             holder.setNoin(String.valueOf(model.getsNoOfInvestors()));
             holder.setPerRaised(String.format(Locale.US,"%.2f", getPerraised(model)));
             holder.setRaisingProgBar(getPerraised(model));
-            holder.setCardVisibility(holder.getEndDate(model.getsEndDate()), model.getsStatus(), getPerraised(model), holder.sraisingprogbar.getContext());
+            holder.setCardVisibility(holder.getEndDate(model.getsEndDate()), model.getsStatus(), getPerraised(model));
         }
         catch (ParseException e) { e.printStackTrace(); }
     }
@@ -74,7 +83,6 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
         private final ImageView simg2;
         private final TextView sname, sdesc, senddate, sperraised, snoin, sminam;
         private final ProgressBar sraisingprogbar;
-
         protected SCardViewHolder(View itemView) {
             super(itemView);
             dealclosedbtn = itemView.findViewById(R.id.dealclosedbtn);
@@ -87,28 +95,66 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
             sminam = itemView.findViewById(R.id.minam);
             sraisingprogbar = itemView.findViewById(R.id.raisingprogbar);
             startupcard = itemView.findViewById(R.id.startupcard);
-            startupcard.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String sname = (String) view.getTag();
-                    if(sname!=null) {
-                        AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                        Fragment myFragment = new ViewFragment();
+            userTypeReference = FirebaseDatabase.getInstance().getReference("UserType");
+            founderReference = FirebaseDatabase.getInstance().getReference().child("Investor");
+            String CurrentUserUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            ProgressDialog progressDialog =  new ProgressDialog(itemView.getContext());
+            progressDialog.setTitle("Loading...");
+            progressDialog.setMessage("Please Wait");
+            startupcard.setOnClickListener(view -> {
+                String sname = (String) view.getTag();
+                userTypeReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String UserType = snapshot.child(CurrentUserUid).child("userType").getValue().toString();
+                        if(UserType.equals("Investor")){
+                            founderReference.child(CurrentUserUid).addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if(snapshot.getChildrenCount() == 1) {
+                                        Toast.makeText(view.getContext(), "To start investing, please complete your profile first.", Toast.LENGTH_SHORT).show();
 
-                        Bundle args = new Bundle();
-                        args.putString("companyName", sname);
-                        if(dealclosedbtn.getVisibility() == View.VISIBLE)
-                            args.putString("ended", "true");
-                        else
-                            args.putString("ended", "false");
-                        myFragment.setArguments(args);
-                        FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-                        transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
-                        transaction.replace(R.id.fragment_investor_container_view_tag, myFragment);
-                        transaction.addToBackStack(null);
-                        transaction.commit();
+                                    }else{
+                                        if(sname!=null) {
+                                            AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                                            Fragment myFragment = new ViewFragment();
+
+                                            Bundle args = new Bundle();
+                                            args.putString("companyName", sname);
+                                            if(dealclosedbtn.getVisibility() == View.VISIBLE)
+                                                args.putString("ended", "true");
+                                            else
+                                                args.putString("ended", "false");
+                                            myFragment.setArguments(args);
+                                            FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+                                            transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+                                            transaction.replace(R.id.fragment_investor_container_view_tag, myFragment);
+                                            transaction.addToBackStack(null);
+                                            transaction.commit();
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+
+                            });
+                        }
+                        else{
+                            progressDialog.hide();
+                            Toast.makeText(view.getContext(), "User Not Found!", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        progressDialog.hide();
+                        Toast.makeText(view.getContext(), "Please Check Your Internet Connectivity!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             });
         }
 
@@ -163,6 +209,17 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
         }
 
         protected void setMinam(String string) {
+            DecimalFormat form = new DecimalFormat("0.##");
+            int minAm = Integer.parseInt(string);
+            if(Integer.parseInt(string)>999){
+                if(minAm>99999){
+                    if(minAm>9999999)
+                        string = form.format(Float.valueOf(String.format(Locale.US,"%.2f", ((float) minAm) / 10000000))) + "Cr";
+                    else
+                        string = form.format(Float.valueOf(String.format(Locale.US,"%.3f", ((float) minAm) /100000))) + "L";
+                }else
+                    string = form.format(Float.valueOf(String.format(Locale.US,"%.2f", ((float) minAm) /1000))) + "K";
+            }
             sminam.setText(string);
         }
 
@@ -176,7 +233,7 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
             setProgressAnimate(sraisingprogbar, (int) f);
         }
 
-        protected void setCardVisibility(@NonNull String endDate, @NonNull String status, float percent, @Nullable Context context){
+        protected void setCardVisibility(@NonNull String endDate, @NonNull String status, float percent){
             if(status.equals("running")){
                 if(endDate.equals("Ended")){
                     if(showInactiveDeals){
@@ -204,7 +261,7 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
                                 30,
                                 r.getDisplayMetrics()
                         );
-                        RecyclerView.LayoutParams rvparams = new  RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                        RecyclerView.LayoutParams rvparams = new  RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                         rvparams.setMargins(px, 0, px, px);
                         itemView.setLayoutParams(rvparams);
                     }else
@@ -218,7 +275,7 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
                             30,
                             r.getDisplayMetrics()
                     );
-                    RecyclerView.LayoutParams rvparams = new  RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    RecyclerView.LayoutParams rvparams = new  RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                     rvparams.setMargins(px, 0, px, px);
                     itemView.setLayoutParams(rvparams);
                 }
@@ -235,7 +292,7 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
                             30,
                             r.getDisplayMetrics()
                     );
-                    RecyclerView.LayoutParams rvparams = new  RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    RecyclerView.LayoutParams rvparams = new  RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                     rvparams.setMargins(px, 0, px, px);
                     itemView.setLayoutParams(rvparams);
                 }
@@ -247,7 +304,7 @@ public class SCardAdapter extends RecyclerView.Adapter<SCardAdapter.SCardViewHol
 
     @Override
     public int getItemCount() {
-        return sCardList.size();
+        return Objects.requireNonNull(sCardList).size();
     }
 
     protected float getPerraised(SCard model) {

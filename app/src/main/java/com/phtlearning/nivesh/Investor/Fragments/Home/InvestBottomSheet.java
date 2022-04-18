@@ -2,11 +2,16 @@ package com.phtlearning.nivesh.Investor.Fragments.Home;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.phtlearning.nivesh.R;
-
+import java.util.Locale;
 import java.util.Objects;
 
 public class InvestBottomSheet extends BottomSheetDialogFragment{
@@ -27,47 +32,89 @@ public class InvestBottomSheet extends BottomSheetDialogFragment{
     public View onCreateView(LayoutInflater inflater,  @Nullable ViewGroup container, @Nullable  Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.invest_bottomsheet, container, false);
 
-        EditText ed = v.findViewById(R.id.getamt);
         Button inv = v.findViewById(R.id.show);
-        TextView eq = v.findViewById(R.id.equity);
-
-        float equity;
-        double maxAm;
-        String raisedAm;
-        String totalAm;
-        final String[] minAm = new String[1];
+        TextView psym = v.findViewById(R.id.psym);
+        TextView availableequitytv = v.findViewById(R.id.avaialbleequity);
+        TextView equityforamttv = v.findViewById(R.id.equityforamount);
+        TextView totalequityforinvtv = v.findViewById(R.id.totaleqforinv);
 
         Bundle bundle = getArguments();
-        equity = Float.parseFloat(Objects.requireNonNull(bundle).getString("equity"));
-        eq.setText(String.valueOf(equity));
+        String name = Objects.requireNonNull(bundle).getString("cname");
+        float totalequityforinv = Float.parseFloat(Objects.requireNonNull(bundle).getString("equity"));
+        float minAm = /*8000;*/ Float.parseFloat(Objects.requireNonNull(bundle).getString("minAm"));
+        float raisedAm = /*50000;*/ Float.parseFloat(Objects.requireNonNull(bundle).getString("raisedAm"));
+        float totalAm = /*100000;*/ Float.parseFloat(Objects.requireNonNull(bundle).getString("totalAm"));
+        float availableequity = (float) ((((raisedAm/totalAm) * 100.00) * totalequityforinv)/ 100.00);
 
-        raisedAm = bundle.getString("raisedAm").replaceAll("[₹,]", "");
-        totalAm = bundle.getString("totalAm").replaceAll("[₹,]", "");
-        minAm[0] = bundle.getString("minAm");
-        double eqrem = ((Double.parseDouble(raisedAm)) / Double.parseDouble(totalAm) * equity) / 10;
-        maxAm = eqrem * Double.parseDouble(totalAm);
+        availableequitytv.setText(String.format(Locale.US, "%.3f", availableequity));
+        totalequityforinvtv.setText(String.format(Locale.US, "%.3f", totalequityforinv));
+
+        EditText getamted = v.findViewById(R.id.getamt);
+        getamted.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                float getinp;
+                if(!getamted.getText().toString().equals(""))
+                    getinp = Float.parseFloat(getamted.getText().toString());
+                else
+                    getinp = 0;
+                float equityforamt = (float) ((((getinp/totalAm) * 100.00) * totalequityforinv)/ 100.00);
+                if(equityforamt<availableequity){
+                    equityforamttv.setText(String.format(Locale.US, "%.3f", equityforamt));
+                    equityforamttv.setTextColor(getResources().getColor(R.color.darkmutedblue));
+                    psym.setTextColor(getResources().getColor(R.color.darkmutedblue));
+                }else {
+                    equityforamttv.setText(String.format(Locale.US, "%.3f", availableequity));
+                    equityforamttv.setTextColor(getResources().getColor(R.color.mutedred));
+                    psym.setTextColor(getResources().getColor(R.color.mutedred));
+                }
+            }
+        });
 
         inv.setOnClickListener(view -> {
-            if(ed.getText().toString().equals("") || ed.getText().toString().equals("0"))
+            float equityforamt = Float.parseFloat((equityforamttv).getText().toString());
+            float getamt;
+            if(!getamted.getText().toString().equals(""))
+                getamt = Float.parseFloat((getamted).getText().toString());
+            else
+                getamt = 0;
+
+            Log.i("InvestBottomSheet values: ", "name: " + name + ", getamt: " + getamt + ", totalequityforinv: " + totalequityforinv + ", minAm: " + minAm + ", raisedAm: " + raisedAm + ", totalAm: " + totalAm + ", equityforamt: " + equityforamt + ", availableequity: " + availableequity);
+            if(getamt == 0) {
                 Toast.makeText(getApplicationContext(), "Please enter valid amount.", Toast.LENGTH_LONG).show();
-            else {
-                float eqtoinvest = Float.parseFloat(ed.getText().toString()) * Float.parseFloat(String.valueOf(equity));
-
-                if (minAm[0].contains("K"))
-                    minAm[0] = String.valueOf(Double.parseDouble(minAm[0].replace("K", "")) * 1000);
-                else if (minAm[0].contains("L"))
-                    minAm[0] = String.valueOf(Double.parseDouble(minAm[0].replace("L", "")) * 100000);
-                else if (minAm[0].contains("Cr"))
-                    minAm[0] = String.valueOf(Double.parseDouble(minAm[0].replace("Cr", "")) * 10000000);
-
-                if(Float.parseFloat(minAm[0])< Float.parseFloat(ed.getText().toString())) {
-                    if (maxAm < Double.parseDouble(ed.getText().toString()) || eqrem < eqtoinvest)
-                        Toast.makeText(getApplicationContext(), "Please select amount less than ₹" + maxAm + " (maximum amount for available equity of " + eqrem + "%).", Toast.LENGTH_LONG).show();
-                    else
-                        Toast.makeText(getApplicationContext(), "Please select amount more than minimum investable amount: ₹" + minAm[0], Toast.LENGTH_LONG).show();
-                }else{
-                    ibsListener.onButtonClicked(Integer.parseInt(ed.getText().toString()));
-                }
+            }else {
+                if(getamt >=minAm){
+                    if(raisedAm+ getamt <= totalAm){
+                        if(raisedAm+ getamt == totalAm)
+                            ibsListener.onButtonClicked(name, String.valueOf(getamt) , String.valueOf(availableequity), String.valueOf(raisedAm+getamt), "", true);
+                        else
+                            ibsListener.onButtonClicked(name, String.valueOf(getamt) , String.valueOf(equityforamt), String.valueOf(raisedAm+getamt), "", false);
+                    }else if(raisedAm+ getamt > totalAm){
+                        AlertDialog.Builder alert = new AlertDialog.Builder(requireContext());
+                        alert.setTitle("Alert");
+                        alert.setMessage("The amount you want to invest is more than the price of available equity, are you sure you want to invest for the amount?");
+                        alert.setPositiveButton("Yes", (dialog, whichButton) -> {
+                            ibsListener.onButtonClicked(name, String.valueOf(getamt), availableequitytv.getText().toString(), String.valueOf(raisedAm+getamt), "", true);
+                        });
+                        alert.setNegativeButton("No", (dialog, whichButton) -> {
+                            getamted.setText("");
+                            equityforamttv.setText("0.000");
+                            dialog.dismiss();
+                        });
+                        alert.show();
+                    }
+                }else
+                    Toast.makeText(getApplicationContext(), "Please enter amount more than minimum amount: ₹" + String.format(Locale.US, "%d", (long) minAm) , Toast.LENGTH_LONG).show();
             }
         });
 
@@ -75,7 +122,7 @@ public class InvestBottomSheet extends BottomSheetDialogFragment{
         return v;
     }
     public interface InvestBottomSheetListener{
-        void onButtonClicked(int amount);
+        void onButtonClicked(@Nullable String cname, @Nullable String amount, @Nullable String equity, @Nullable String raisedAmount, @Nullable String imageurl, boolean completedRaising);
     }
 
     @Override

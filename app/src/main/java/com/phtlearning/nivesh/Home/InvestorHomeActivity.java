@@ -32,6 +32,8 @@ import com.phtlearning.nivesh.Investor.Fragments.Profile.InvestorProfileView;
 import com.phtlearning.nivesh.Investor.Fragments.Search.InvestorSearchFragment;
 import com.phtlearning.nivesh.R;
 
+import java.util.Objects;
+
 public class InvestorHomeActivity extends AppCompatActivity {
     BubbleNavigationLinearView bubbleNavigationLinearView;
     FragmentTransaction fragmentTransaction;
@@ -48,7 +50,7 @@ public class InvestorHomeActivity extends AppCompatActivity {
         userTypeReference = FirebaseDatabase.getInstance().getReference("UserType");
         investorReference = FirebaseDatabase.getInstance().getReference().child("Investor");
 
-        String CurrentUserUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String CurrentUserUid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
         Toast.makeText(this, CurrentUserUid, Toast.LENGTH_SHORT).show();
 
         bubbleNavigationLinearView = findViewById(R.id.bottom_navigation_view_linear);
@@ -59,100 +61,97 @@ public class InvestorHomeActivity extends AppCompatActivity {
         bubbleNavigationLinearView.setBadgeValue(4,null);
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new FounderHomeFragment());
+        fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new SearchFragment());
         fragmentTransaction.commit();
-        bubbleNavigationLinearView.setNavigationChangeListener(new BubbleNavigationChangeListener() {
-            @Override
-            public void onNavigationChanged(View view, int position) {
-                switch (position)
-                {
-                    case 0:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new SearchFragment());
-                        fragmentTransaction.commit();
-                        break;
+        bubbleNavigationLinearView.setNavigationChangeListener((view, position) -> {
+            switch (position)
+            {
+                case 0:
+                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new SearchFragment());
+                    fragmentTransaction.commit();
+                    break;
 
-                    case 1:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorSearchFragment());
-                        fragmentTransaction.commit();
-                        break;
+                case 1:
+                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorSearchFragment());
+                    fragmentTransaction.commit();
+                    break;
 
-                    case 2:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorInvestFundFragment());
-                        fragmentTransaction.commit();
-                        break;
-                    case 3:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorLogoutFragment());
-                        fragmentTransaction.commit();
-                        break;
+                case 2:
+                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorInvestFundFragment());
+                    fragmentTransaction.commit();
+                    break;
+                case 3:
+                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorLogoutFragment());
+                    fragmentTransaction.commit();
+                    break;
 
-                    case 4:
-                        userTypeReference.addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                String UserType = snapshot.child(CurrentUserUid).child("userType").getValue().toString();
-                                if(UserType.equals("Investor"))
-                                {
-                                    investorReference.child(CurrentUserUid).addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            if(snapshot.getChildrenCount() == 1)
-                                            {
-                                                fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                                                fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorProfileFragment());
-                                                fragmentTransaction.commit();
-                                            }
-                                            else
-                                            {
-                                                fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                                                fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorProfileView());
-                                                fragmentTransaction.commit();
-                                            }
+                case 4:
+                    userTypeReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String UserType = Objects.requireNonNull(snapshot.child(CurrentUserUid).child("userType").getValue()).toString();
+                            if(UserType.equals("Investor"))
+                            {
+                                investorReference.child(CurrentUserUid).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if(snapshot.getChildrenCount() == 1)
+                                        {
+                                            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                                            fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorProfileFragment());
+                                            fragmentTransaction.commit();
                                         }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
-
+                                        else
+                                        {
+                                            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                                            fragmentTransaction.replace(R.id.fragment_investor_container_view_tag, new InvestorProfileView());
+                                            fragmentTransaction.commit();
                                         }
+                                    }
 
-                                    });
-                                }
-                                else
-                                {
-                                    progressDialog.hide();
-                                    Toast.makeText(InvestorHomeActivity.this, "User Not Found!", Toast.LENGTH_SHORT).show();
-                                }
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+
+                                });
                             }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
+                            else
+                            {
                                 progressDialog.hide();
-                                Toast.makeText(InvestorHomeActivity.this, "Please Check Your Internet Connectivity!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(InvestorHomeActivity.this, "User Not Found!", Toast.LENGTH_SHORT).show();
                             }
-                        });
-                        break;
+                        }
 
-                }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            progressDialog.hide();
+                            Toast.makeText(InvestorHomeActivity.this, "Please Check Your Internet Connectivity!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    break;
 
             }
+
         });
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_investor_container_view_tag);
-        fragment.onActivityResult(requestCode, resultCode, data);
+        Objects.requireNonNull(fragment).onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent a = new Intent(Intent.ACTION_MAIN);
-        a.addCategory(Intent.CATEGORY_HOME);
-        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(a);
-    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        Intent a = new Intent(Intent.ACTION_MAIN);
+//        a.addCategory(Intent.CATEGORY_HOME);
+//        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(a);
+//    }
 }

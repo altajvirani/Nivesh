@@ -2,11 +2,13 @@ package com.phtlearning.nivesh.Investor.Fragments.Home.Fragments;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +27,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.phtlearning.nivesh.Investor.Fragments.Home.InvestBottomSheet;
@@ -47,7 +51,7 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
     private String cname;
     private View view;
     private boolean ended;
-
+    DatabaseReference startupReference, investorReference, userTypeReference;
     public ViewFragment() {}
 
     @Override
@@ -59,7 +63,9 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_view, container, false);
-
+        startupReference = FirebaseDatabase.getInstance().getReference().child("Startups");
+        investorReference = FirebaseDatabase.getInstance().getReference().child("Investor");
+        userTypeReference = FirebaseDatabase.getInstance().getReference("UserType");
         TabLayout tabLayout = v.findViewById(R.id.viewtabbar);
         Button invest = v.findViewById(R.id.invest);
         viewPager = v.findViewById(R.id.viewpager);
@@ -73,16 +79,22 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
         invest.setOnClickListener(view -> {
             InvestBottomSheet is = new InvestBottomSheet();
             if(getChildFragmentManager().findFragmentByTag(InvestBottomSheet.TAG) == null) {
-                TextView inv = v.findViewById(R.id.invisibletextview);
-                TextView minAm = v.findViewById(R.id.minam);
-                TextView raisedAm = v.findViewById(R.id.amtraised);
-                TextView totalAm = v.findViewById(R.id.totalraised);
+                TextView nametv = v.findViewById(R.id.cname);
+                TextView eqtv = v.findViewById(R.id.invisibletextviewforequity);
+                TextView minAmtv = v.findViewById(R.id.invisibletextviewforminam);
+                TextView raisedAmtv = v.findViewById(R.id.invisibletextviewforraisedam);
+                TextView totalAmtv = v.findViewById(R.id.invisibletextviewfortotalam);
 
                 Bundle b = new Bundle();
-                b.putString("equity", inv.getText().toString());
-                b.putString("minAm", minAm.getText().toString());
-                b.putString("raisedAm", raisedAm.getText().toString());
-                b.putString("totalAm", totalAm.getText().toString());
+                String name = nametv.getText().toString().toLowerCase();
+                name = name.replace(".", "");
+                name = name.replace("'", "");
+                name = name.replace("’", "");
+                b.putString("cname", name);
+                b.putString("equity", eqtv.getText().toString());
+                b.putString("minAm", minAmtv.getText().toString());
+                b.putString("raisedAm", raisedAmtv.getText().toString());
+                b.putString("totalAm", totalAmtv.getText().toString());
 
                 is.setArguments(b);
                 is.show(getChildFragmentManager(), InvestBottomSheet.TAG);
@@ -151,9 +163,13 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
                                                         vph.setRaisingProgBar(getPerraised(Float.parseFloat(Objects.requireNonNull(shot.child("raisedAmount").getValue()).toString()), Float.parseFloat(Objects.requireNonNull(shot.child("totalTargetAmount").getValue()).toString())));
                                                         vph.setNoin(Objects.requireNonNull(shot.child("totalInvestors").getValue()).toString());
                                                         vph.setTotalam(totalTargetAmount);
-                                                        vph.setInvisibleTextViewForEquity(Objects.requireNonNull(shot.child("equity").getValue()).toString());
-
                                                         setTabLayoutAndViewPager(Objects.requireNonNull(shot.child("companyDescription").getValue()).toString(), Objects.requireNonNull(shot.child("pitchLink").getValue()).toString(), Objects.requireNonNull(shot.child("problemStatement").getValue()).toString(), Objects.requireNonNull(shot.child("solutionStatement").getValue()).toString(), Objects.requireNonNull(shot.child("equity").getValue()).toString(), Objects.requireNonNull(shot.child("webSiteLink").getValue()).toString());
+
+                                                        vph.setInvisibleTextViewForEquity(Objects.requireNonNull(shot.child("equity").getValue()).toString());
+                                                        vph.setInvisibleTextViewForMinamount(Objects.requireNonNull(shot.child("minAmount").getValue()).toString());
+                                                        vph.setInvisibleTextViewForRaisedAmount(Objects.requireNonNull(shot.child("raisedAmount").getValue()).toString());
+                                                        vph.setInvisibleTextViewForTotalAmount(Objects.requireNonNull(shot.child("totalTargetAmount").getValue()).toString());
+
                                                     } catch (ParseException e) {
                                                         e.printStackTrace();
                                                     }
@@ -178,7 +194,7 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
 
     protected class ViewPageHolder{
         private final ImageView coverimg;
-        private final TextView cname, raisedam, totalam, per, timeleft, noin, minam, invisibleTextView;
+        private final TextView cname, raisedam, totalam, per, timeleft, noin, minam, eqtv, minAmtv, raisedAmtv, totalAmtv;
         private final ProgressBar raisingprogbar;
         private final Button investbtn;
 
@@ -193,7 +209,10 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
             minam = itemView.findViewById(R.id.minam);
             raisingprogbar = itemView.findViewById(R.id.raisingprogbar);
             investbtn = itemView.findViewById(R.id.invest);
-            invisibleTextView = itemView.findViewById(R.id.invisibletextview);
+            eqtv = itemView.findViewById(R.id.invisibletextviewforequity);
+            minAmtv = itemView.findViewById(R.id.invisibletextviewforminam);
+            raisedAmtv = itemView.findViewById(R.id.invisibletextviewforraisedam);
+            totalAmtv = itemView.findViewById(R.id.invisibletextviewfortotalam);
         }
 
         protected void setCoverImg(String string){
@@ -266,8 +285,23 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
         }
 
         protected void setInvisibleTextViewForEquity(String string) {
-            invisibleTextView.setText(string);
-            invisibleTextView.setVisibility(View.INVISIBLE);
+            eqtv.setText(string);
+            eqtv.setVisibility(View.INVISIBLE);
+        }
+
+        public void setInvisibleTextViewForMinamount(String string) {
+            minAmtv.setText(string);
+            minAmtv.setVisibility(View.INVISIBLE);
+        }
+
+        public void setInvisibleTextViewForRaisedAmount(String string) {
+            raisedAmtv.setText(string);
+            raisedAmtv.setVisibility(View.INVISIBLE);
+        }
+
+        public void setInvisibleTextViewForTotalAmount(String string) {
+            totalAmtv.setText(string);
+            totalAmtv.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -303,8 +337,36 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
     }
 
     @Override
-    public void onButtonClicked(int amount) {
+    public void onButtonClicked(String name, String amount, String equity, String raisedAmount, String imageurl, boolean completedRaising) {
+        Log.i("onButtonClicked in ViewFragment: ", name + " " + equity + " " + raisedAmount + " " + imageurl + " " + completedRaising);
 
+        ProgressDialog progressDialog =  new ProgressDialog(getContext());
+        progressDialog.setTitle("Loading...");
+        progressDialog.setMessage("Please Wait");
+
+        String CurrentUserUid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+        userTypeReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String UserType = Objects.requireNonNull(snapshot.child(CurrentUserUid).child("userType").getValue()).toString();
+                if(UserType.equals("Investor")){
+                    InvestedDB investedDB = new InvestedDB("Amazon","10000","0.1","");
+                    investorReference.child(CurrentUserUid).child("Startups").child("Amazon").setValue(investedDB);
+                    Toast.makeText(getContext(), "Investment successful.", Toast.LENGTH_SHORT).show();
+                    progressDialog.hide();
+                }
+                else{
+                    progressDialog.hide();
+                    Toast.makeText(getContext(), "User Not Found!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                progressDialog.hide();
+                Toast.makeText(getContext(), "Please check your internet connectivity.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private static class FetchOnExecute {
@@ -347,3 +409,37 @@ public class ViewFragment extends Fragment implements InvestBottomSheet.InvestBo
     }
 }
 
+
+
+//        Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
+//        ProgressDialog progressDialog =  new ProgressDialog(getContext());
+//        progressDialog.setTitle("Loading...");
+//        progressDialog.setMessage("Please Wait");
+//        startupReference = FirebaseDatabase.getInstance().getReference().child("Startups");
+//        investorReference = FirebaseDatabase.getInstance().getReference().child("Investor");
+//        userTypeReference = FirebaseDatabase.getInstance().getReference("UserType");
+//        String CurrentUserUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//        userTypeReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                String UserType = snapshot.child(CurrentUserUid).child("userType").getValue().toString();
+//                if(UserType.equals("Investor"))
+//                {
+//                    InvestedDB investedDB = new InvestedDB(cname,amount,equity);
+//                    investorReference.child(CurrentUserUid).child("Startups").child(cname).setValue(investedDB);
+//                    Toast.makeText(getContext(), "Successfully!", Toast.LENGTH_SHORT).show();
+//                    progressDialog.hide();
+//                }
+//                else
+//                {
+//                    progressDialog.hide();
+//                    Toast.makeText(getContext(), "User Not Found!", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                progressDialog.hide();
+//                Toast.makeText(getContext(), "Please Check Your Internet Connectivity!", Toast.LENGTH_SHORT).show();
+//            }
+//        });

@@ -37,6 +37,7 @@
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <EditText
+            android:digits="0123456789 qwertzuiopasdfghjklyxcvbnm"
             android:id="@+id/searchpage_searchbar"
             android:layout_width="234dp"
             android:layout_height="48dp"

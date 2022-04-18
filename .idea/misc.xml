@@ -3,6 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/founder/fragment/Home/layout/fragment_founder_home.xml" value="0.14166666666666666" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/founder/fragment/Profile/layout/fragment_founder_user_dob.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/founder/fragment/RaiseFund/layout/fragment_equity_of_company.xml" value="0.264" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/home/layout/activity_founder_home.xml" value="0.14166666666666666" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/home/layout/activity_investor_home.xml" value="0.2" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_about_the_team.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_business_model.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_customers.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_description_investor.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_faq.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_investor_home.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_market_value.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_messages.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_pitch.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_pitch_investor.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_problem_statement.xml" value="0.264" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_revenue_distribution.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_saved.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_settings.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_solution_investor.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/fragment_view.xml" value="0.264" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/invest_bottomsheet.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Home/layout/startup_search_card.xml" value="0.25" />
+        <entry key="..\:/Nivesh/app/src/main/res/layouts/investor/fragment/Profile/layout/fragment_investor_d_o_b.xml" value="0.25" />
         <entry key="..\:/Project/app/src/main/res/drawable-hdpi/round_border.xml" value="0.1335" />
         <entry key="..\:/Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1135" />
         <entry key="..\:/Project/app/src/main/res/drawable-xhdpi/dealclosedbg.xml" value="0.1" />

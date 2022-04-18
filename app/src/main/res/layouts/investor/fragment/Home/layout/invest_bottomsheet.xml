@@ -45,6 +45,7 @@
         android:weightSum="1" />
 
     <EditText
+        android:digits="01234 56789"
         android:id="@+id/getamt"
         android:layout_width="234dp"
         android:layout_height="48dp"
@@ -56,9 +57,9 @@
         android:background="@drawable/searchbarbg"
         android:fontFamily="@font/nunito_extralight"
         android:hint="@string/eg_8000"
-        android:imeOptions="actionSearch"
+        android:imeOptions="actionGo"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="number"
         android:maxEms="26"
         android:maxLines="1"
         android:paddingStart="18dp"
@@ -74,14 +75,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
-        android:id="@+id/showeq"
+        android:id="@+id/showtotaleq"
         android:layout_below="@id/getamt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="1"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp">
 
@@ -90,17 +91,17 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_regular"
-            android:text="@string/equity_for_the_amount"
+            android:text="@string/total_equity_for_investors"
             android:textColor="@color/vdgrey"
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/equity"
+            android:id="@+id/totaleqforinv"
             android:paddingEnd="1dp"
             android:layout_weight="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_bold"
+            android:fontFamily="@font/nunito_extrabold"
             android:text="@string/equity"
             android:textColor="@color/black"
             android:textSize="18sp" />
@@ -109,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_weight="0"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_bold"
+            android:fontFamily="@font/nunito_extrabold"
             android:text="@string/percent_sym"
             android:textColor="@color/black"
             android:textSize="18sp" />
@@ -118,10 +119,98 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/showavailableq"
+        android:layout_below="@id/showtotaleq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/showeq"
-        android:layout_marginTop="30dp"
+        android:weightSum="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/available_equity_for_investment"
+            android:textColor="@color/vdgrey"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/avaialbleequity"
+            android:paddingEnd="1dp"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/equity"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight="0"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/percent_sym"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/equityforamt"
+        android:layout_below="@id/showavailableq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/equity_for_given_amount"
+            android:textColor="@color/vdgrey"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/equityforamount"
+            android:paddingEnd="1dp"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/equity"
+            android:textColor="@color/darkmutedblue"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/psym"
+            android:layout_width="wrap_content"
+            android:layout_weight="0"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/percent_sym"
+            android:textColor="@color/darkmutedblue"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/equityforamt"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:weightSum="2">
 

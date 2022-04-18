@@ -21,7 +21,6 @@
     <color name="vlightgrey">#EFEFEF</color>
     <color name="orange">#CE7453</color>
     <color name="lightmutedblue">#13A5D1</color>
-
     <color name="red_active">#f44336</color>
     <color name="purple_active">#9c27b0</color>
     <color name="blue_active">#03a9f4</color>
@@ -30,7 +29,6 @@
     <color name="yellow_active">#ffeb3b</color>
     <color name="orange_active">#ff9800</color>
     <color name="grey_active">#9e9e9e</color>
-
     <color name="red_inactive">#e57373</color>
     <color name="purple_inactive">#ba68c8</color>
     <color name="blue_inactive">#64b5f6</color>
@@ -39,9 +37,7 @@
     <color name="yellow_inactive">#fff176</color>
     <color name="orange_inactive">#ffb74d</color>
     <color name="gery_inactive">#e0e0e0</color>
-
     <color name="default_inactive">#78909c</color>
-
     <color name="red_bg_light">#ffebee</color>
     <color name="purple_bg_light">#f3e5f5</color>
     <color name="blue_bg_light">#e3f2fd</color>
@@ -50,11 +46,9 @@
     <color name="yellow_bg_light">#fffde7</color>
     <color name="orange_bg_light">#fff3e0</color>
     <color name="grey_bg_light">#fafafa</color>
-
     <color name="yellow">#F8BA0F</color>
     <color name="goodgrey">#535353</color>
     <color name="lightgrey">#EEEEEE</color>
-
     <color name="mgrey">#878787</color>
     <color name="borange">#E36161</color>
     <color name="neongrenishblue">#00DDFF</color>
@@ -64,5 +58,6 @@
     <color name="gradneon">#23FAD7</color>
     <color name="vdgrey">#43444A</color>
     <color name="mutedlavender">#4354C5</color>
-
+    <color name="darkmutedblue">#004BA6</color>
+    <color name="mutedred">#A11516</color>
 </resources>
