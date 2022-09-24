@@ -1,5 +1,5 @@
-Crowdfunding refers to the behavior of public individuals to use different internet technologies and digital platforms in contributing and investing in project leaders, and innovators. The NIVESH Platform that we are proposing to develop this project, is a crowdfunding platform that creates a gateway for fund providers, to contribute to the financing
-of a promising project started by an innovative creator who lacks sufficient resources for reifying.This will as a result increase the popularity of starting ventures among people in India.
+# About the Project
+Crowdfunding refers to the behavior of public individuals to use different internet technologies and digital platforms in contributing and investing in project leaders, and innovators. The platform - "Nivesh" that we have proposed, is a crowdfunding platform that creates a gateway for fund providers, to contribute to the financing of a promising project started by an innovative creator who lacks sufficient resources for reifying.This will as a result increase the popularity of starting ventures among people in India.
 One of its main roles is to create a link that will bridge the gap between viable projectideas and successful implementation. For the development of this project, we will base our
 process on a development methodology called Iterations and Increments, as well as the Kanban board model to divide and organize our projects into small tasks, for the design, we will be using
 the Adobe XD as a tool to model the different functionalities and aspects and use multipleframeworks and tools such as Android studio, Java, Adobe XD and Firebase as real-time
@@ -8,9 +8,9 @@ database.
 This application will be having two different ends one is for the founder and another is
 for investors. The overall process will work as follows:
 
-    i. The founder will list his startup in an application for which he will go through a series of steps.
+   * The founder will list his startup in an application for which he will go through a series of steps.
 
-    ii. Once a startup is listed the investor can now see that startup and will be able to invest in it by choosing the amount he wants to invest.
+   * Once a startup is listed the investor can now see that startup and will be able to invest in it by choosing the amount he wants to invest.
 
 This application is quite complex but to make it easy to use for users’ better UI techniques
 and modern design are used which as a result will create intuitive UI and will be giving us the
@@ -82,12 +82,12 @@ Algorithm:
 ![image](https://user-images.githubusercontent.com/85060648/179061260-3c2bf9b9-1342-4cac-a81d-d46b8f21aa2a.png)
 
 ![image](https://user-images.githubusercontent.com/85060648/179061414-a2fa9b23-8f7a-4d46-b5cc-dc02194fb552.png)
-![image](https://user-images.githubusercontent.com/85060648/179061507-1491996c-65ff-4b3e-ba7e-610e25c856db.png)
+![image](https://user-images.githubusercontent.com/85060648/179061507-1491996c-65ff-4b3e-ba7e-610e25c856db.png)<br>
 
 
-Results for Validation and Verification:
-
-![image](https://user-images.githubusercontent.com/85060648/179062632-ea4966ce-7216-4e70-8244-12d971169817.png) ![image](https://user-images.githubusercontent.com/85060648/179062655-8bb37198-3cab-4cc1-a3e1-ca86fbe3d12f.png) 
+# Snapshots for Validation and Verification:
+![image](https://user-images.githubusercontent.com/85060648/179062655-8bb37198-3cab-4cc1-a3e1-ca86fbe3d12f.png) 
+![image](https://user-images.githubusercontent.com/85060648/179062632-ea4966ce-7216-4e70-8244-12d971169817.png) 
 ![image](https://user-images.githubusercontent.com/85060648/179062681-4d63c36a-a5d7-47ca-befb-8eec65bb074b.png) ![image](https://user-images.githubusercontent.com/85060648/179062701-227f649a-be88-4384-8399-ffabb6e3020a.png)
 ![image](https://user-images.githubusercontent.com/85060648/179062832-4feb36ea-d517-411b-b7a5-2f0d8799a1ac.png)
 ![image](https://user-images.githubusercontent.com/85060648/179062851-4c791093-6d59-4de4-befe-a6ee08d68a37.png) ![image](https://user-images.githubusercontent.com/85060648/179062878-fa0df0be-f05a-437e-b048-40be52e847a8.png)
