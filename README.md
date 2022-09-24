@@ -87,7 +87,7 @@ Algorithm:
 # Snapshots for Validation and Verification:
 
 <img src="https://user-images.githubusercontent.com/89018772/192105529-9cf967b4-551a-43bb-9d93-56e61648029b.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/>
-<img src="(https://user-images.githubusercontent.com/85060648/179062655-8bb37198-3cab-4cc1-a3e1-ca86fbe3d12f.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+<img src="https://user-images.githubusercontent.com/85060648/179062655-8bb37198-3cab-4cc1-a3e1-ca86fbe3d12f.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="https://user-images.githubusercontent.com/85060648/179062632-ea4966ce-7216-4e70-8244-12d971169817.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="https://user-images.githubusercontent.com/89018772/192105189-d9427647-5855-4a34-b1b0-a05015741ac8.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="https://user-images.githubusercontent.com/89018772/192105199-28b05f64-eda0-47b5-b717-7da293b02617.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
@@ -104,15 +104,4 @@ Algorithm:
 <img src="https://user-images.githubusercontent.com/89018772/192105571-fbe3ee3f-3698-4ac4-b4b3-f41257140877.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="https://user-images.githubusercontent.com/85060648/179062878-fa0df0be-f05a-437e-b048-40be52e847a8.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="https://user-images.githubusercontent.com/85060648/179062899-18eab09f-770b-4e8c-8cdc-d6b05551a7c0.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/85060648/179062923-289d76fb-6a80-4cfe-9ba6-9487902fc7c2.png | width=300" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-
-
-
-
-
-
-
-
-
-
-
+<img src="https://user-images.githubusercontent.com/85060648/179062923-289d76fb-6a80-4cfe-9ba6-9487902fc7c2.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
