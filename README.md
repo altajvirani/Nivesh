@@ -88,10 +88,15 @@ Algorithm:
 # Snapshots for Validation and Verification:
 ![image](https://user-images.githubusercontent.com/85060648/179062655-8bb37198-3cab-4cc1-a3e1-ca86fbe3d12f.png) 
 ![image](https://user-images.githubusercontent.com/85060648/179062632-ea4966ce-7216-4e70-8244-12d971169817.png) 
-![image](https://user-images.githubusercontent.com/85060648/179062681-4d63c36a-a5d7-47ca-befb-8eec65bb074b.png) ![image](https://user-images.githubusercontent.com/85060648/179062701-227f649a-be88-4384-8399-ffabb6e3020a.png)
-![image](https://user-images.githubusercontent.com/85060648/179062832-4feb36ea-d517-411b-b7a5-2f0d8799a1ac.png)
-![image](https://user-images.githubusercontent.com/85060648/179062851-4c791093-6d59-4de4-befe-a6ee08d68a37.png) ![image](https://user-images.githubusercontent.com/85060648/179062878-fa0df0be-f05a-437e-b048-40be52e847a8.png)
-![image](https://user-images.githubusercontent.com/85060648/179062899-18eab09f-770b-4e8c-8cdc-d6b05551a7c0.png) ![image](https://user-images.githubusercontent.com/85060648/179062923-289d76fb-6a80-4cfe-9ba6-9487902fc7c2.png)
+![Screenshot_2022-09-24-20-34-44-625_com phtlearning nivesh](https://user-images.githubusercontent.com/89018772/192105189-d9427647-5855-4a34-b1b0-a05015741ac8.jpg)
+![Screenshot_2022-09-24-20-29-02-906_com phtlearning nivesh](https://user-images.githubusercontent.com/89018772/192105199-28b05f64-eda0-47b5-b717-7da293b02617.jpg)
+![Screenshot_2022-09-24-20-10-19-811_com phtlearning nivesh](https://user-images.githubusercontent.com/89018772/192105245-e1d3c9ba-7656-495c-9d2b-3912ae1edb90.jpg)
+![Screenshot_2022-09-24-20-10-06-406_com phtlearning nivesh](https://user-images.githubusercontent.com/89018772/192105270-4a2736c1-7753-48bf-a1dd-529f6df30e97.jpg)
+![Screenshot_2022-09-24-20-11-12-111_com phtlearning nivesh](https://user-images.githubusercontent.com/89018772/192105275-27828460-53fb-4271-87b5-ce72360f4ed3.jpg)
+![image](https://user-images.githubusercontent.com/85060648/179062851-4c791093-6d59-4de4-befe-a6ee08d68a37.png) 
+![image](https://user-images.githubusercontent.com/85060648/179062878-fa0df0be-f05a-437e-b048-40be52e847a8.png)
+![image](https://user-images.githubusercontent.com/85060648/179062899-18eab09f-770b-4e8c-8cdc-d6b05551a7c0.png) 
+![image](https://user-images.githubusercontent.com/85060648/179062923-289d76fb-6a80-4cfe-9ba6-9487902fc7c2.png)
 
 
 
