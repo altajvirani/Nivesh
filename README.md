@@ -102,8 +102,6 @@ Algorithm:
 ![Screenshot_2022-09-24-20-10-19-811_com phtlearning nivesh](https://user-images.githubusercontent.com/89018772/192105549-9f65b542-f516-49b5-adbf-53b303b1ff5b.jpg)
 ![Screenshot_2022-09-24-20-10-23-442_com phtlearning nivesh](https://user-images.githubusercontent.com/89018772/192105561-5fdef3b4-ad54-4449-a356-afc0c52c24af.jpg)
 ![Screenshot_2022-09-24-20-10-33-381_com phtlearning nivesh](https://user-images.githubusercontent.com/89018772/192105571-fbe3ee3f-3698-4ac4-b4b3-f41257140877.jpg)
-
-![image](https://user-images.githubusercontent.com/85060648/179062851-4c791093-6d59-4de4-befe-a6ee08d68a37.png) 
 ![image](https://user-images.githubusercontent.com/85060648/179062878-fa0df0be-f05a-437e-b048-40be52e847a8.png)
 ![image](https://user-images.githubusercontent.com/85060648/179062899-18eab09f-770b-4e8c-8cdc-d6b05551a7c0.png) 
 ![image](https://user-images.githubusercontent.com/85060648/179062923-289d76fb-6a80-4cfe-9ba6-9487902fc7c2.png)
