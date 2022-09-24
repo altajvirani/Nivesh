@@ -86,22 +86,22 @@ Algorithm:
 
 # Snapshots for Validation and Verification:
 
-<img src="https://user-images.githubusercontent.com/89018772/192105529-9cf967b4-551a-43bb-9d93-56e61648029b.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/>
-<img src="https://user-images.githubusercontent.com/85060648/179062655-8bb37198-3cab-4cc1-a3e1-ca86fbe3d12f.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/85060648/179062632-ea4966ce-7216-4e70-8244-12d971169817.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105189-d9427647-5855-4a34-b1b0-a05015741ac8.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105199-28b05f64-eda0-47b5-b717-7da293b02617.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105270-4a2736c1-7753-48bf-a1dd-529f6df30e97.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105357-2a2cef8e-7ee5-4386-aa88-7b9153c47e61.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105495-37984a99-43ef-4bde-889b-5635d5337dad.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105505-35e4df62-2da5-464f-bb30-490846eda131.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105515-2e3f46dd-4c9e-48db-99c2-cd09a682594f.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105516-a6bdca0f-0e67-4423-978a-cb6c23969e66.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105520-d52e6636-04da-4d9b-b60c-c81ece8787a2.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105546-fdc6848e-4584-4440-bc58-cc913bdfa859.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105549-9f65b542-f516-49b5-adbf-53b303b1ff5b.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105561-5fdef3b4-ad54-4449-a356-afc0c52c24af.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/89018772/192105571-fbe3ee3f-3698-4ac4-b4b3-f41257140877.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/85060648/179062878-fa0df0be-f05a-437e-b048-40be52e847a8.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/85060648/179062899-18eab09f-770b-4e8c-8cdc-d6b05551a7c0.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-<img src="https://user-images.githubusercontent.com/85060648/179062923-289d76fb-6a80-4cfe-9ba6-9487902fc7c2.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+<img src="https://user-images.githubusercontent.com/89018772/192105529-9cf967b4-551a-43bb-9d93-56e61648029b.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/85060648/179062655-8bb37198-3cab-4cc1-a3e1-ca86fbe3d12f.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/85060648/179062632-ea4966ce-7216-4e70-8244-12d971169817.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105189-d9427647-5855-4a34-b1b0-a05015741ac8.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105199-28b05f64-eda0-47b5-b717-7da293b02617.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105270-4a2736c1-7753-48bf-a1dd-529f6df30e97.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105357-2a2cef8e-7ee5-4386-aa88-7b9153c47e61.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105495-37984a99-43ef-4bde-889b-5635d5337dad.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105505-35e4df62-2da5-464f-bb30-490846eda131.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105515-2e3f46dd-4c9e-48db-99c2-cd09a682594f.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105516-a6bdca0f-0e67-4423-978a-cb6c23969e66.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105520-d52e6636-04da-4d9b-b60c-c81ece8787a2.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105546-fdc6848e-4584-4440-bc58-cc913bdfa859.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105549-9f65b542-f516-49b5-adbf-53b303b1ff5b.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105561-5fdef3b4-ad54-4449-a356-afc0c52c24af.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/89018772/192105571-fbe3ee3f-3698-4ac4-b4b3-f41257140877.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/85060648/179062878-fa0df0be-f05a-437e-b048-40be52e847a8.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/85060648/179062899-18eab09f-770b-4e8c-8cdc-d6b05551a7c0.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
+<img src="https://user-images.githubusercontent.com/85060648/179062923-289d76fb-6a80-4cfe-9ba6-9487902fc7c2.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="562" height="1000"/>
